@@ -16,6 +16,7 @@ int main()
     string ships[5] = {"Patrol Boat", "Destroyer", "Submarine", "Battleship", "Carrier"};
     int location[5];
     cout << "Background information and rules.\n";
+    //prompts user to place their ships using for loop
     for(int i=0; i<5; i++)
     {
         cout << "Place your " << ships[i] << ": ";
