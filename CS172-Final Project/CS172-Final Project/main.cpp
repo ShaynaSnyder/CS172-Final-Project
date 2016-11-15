@@ -23,7 +23,8 @@ int main()
         cout << "Place your " << ships[i] << ": ";
         cin >> location[i];
     }
-    
+
     cout << "Hello Cheree";
+
     return 0;
 }
