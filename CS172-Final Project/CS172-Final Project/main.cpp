@@ -24,6 +24,6 @@ int main()
         cin >> location[i];
     }
     
-    cout << "Hello?";
+    cout << "Hello, Shayna";
     return 0;
 }
