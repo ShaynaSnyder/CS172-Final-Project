@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2299914B1DDBADDC00010D92 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2299914A1DDBADDC00010D92 /* main.cpp */; };
+		32A6E2081DDBB81F00F3D08B /* Ships.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A6E2061DDBB81F00F3D08B /* Ships.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		229991471DDBADDC00010D92 /* CS172-Final Project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "CS172-Final Project"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2299914A1DDBADDC00010D92 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		32A6E2061DDBB81F00F3D08B /* Ships.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ships.cpp; sourceTree = "<group>"; };
+		32A6E2071DDBB81F00F3D08B /* Ships.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Ships.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				2299914A1DDBADDC00010D92 /* main.cpp */,
+				32A6E2061DDBB81F00F3D08B /* Ships.cpp */,
+				32A6E2071DDBB81F00F3D08B /* Ships.hpp */,
 			);
 			path = "CS172-Final Project";
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2299914B1DDBADDC00010D92 /* main.cpp in Sources */,
+				32A6E2081DDBB81F00F3D08B /* Ships.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +252,7 @@
 				229991501DDBADDC00010D92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
