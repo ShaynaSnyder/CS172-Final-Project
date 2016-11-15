@@ -16,18 +16,26 @@ int main()
     //declares string array to hold ship names
     string shipNames[5] = {"Patrol Boat", "Destroyer", "Submarine", "Battleship", "Carrier"};
     //declares int arrays to hold ship sizes and locations
-    int shipSize[5] = {2, 3, 3, 4, 5};
     int location[5];
     cout << "Background information and rules.\n";
     //prompts user to place their ships using for loop
     for(int i=0; i<5; i++)
     {
-        do
-        {
             cout << "Place your " << shipNames[i] << ": ";
             cin >> location[i];
-            cout << "That is not a valud location for your ship.\n";
-        } while(!(location[i]>=1 && location[i]<=50));
+        //if location is not between 1 and 50, while loop runs another iteration
+        while(!(location[i]>=1 && location[i]<=50))
+        {
+            cout << "That is not a valid location for your ship.\n";
+            cout << "Place your " << shipNames[i] << ": ";
+            cin >> location[i];
+            //tests whether or not there is already a boat placed in this location
+            for(int j=0; j<i; j++)
+            {
+                if(location[i]==location[j])
+                    location[i]=0;
+            }
+        }
     }
     return 0;
 }
