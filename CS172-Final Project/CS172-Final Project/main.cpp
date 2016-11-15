@@ -1,6 +1,6 @@
 //Cheree LaPierre and Shayna Snyder
 //CS172-1 Final Project
-//Text-Adventure Battleship
+//Text-Adventure Battleship-esque
 //15 November 2016
 
 #include <iostream>
