@@ -22,8 +22,12 @@ int main()
     //prompts user to place their ships using for loop
     for(int i=0; i<5; i++)
     {
-        cout << "Place your " << shipNames[i] << ": ";
-        cin >> location[i];
+        do
+        {
+            cout << "Place your " << shipNames[i] << ": ";
+            cin >> location[i];
+            cout << "That is not a valud location for your ship.\n";
+        } while(!(location[i]>=1 && location[i]<=50));
     }
     return 0;
 }
