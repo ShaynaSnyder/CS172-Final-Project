@@ -10,10 +10,10 @@
 
 using namespace std;
 
-const int empty    = 0;  // contains water
+const int empty    = 0;  // empty
 const int occupied = 1;  // contains a ship
-const int missed   = 2;  // shot into ocean
-const int hit      = 3;  // shot and hit
+const int missed   = 2;  // missed
+const int hit      = 3;  // hit
 
 int board[5][5]; // Two-dimensional array for gameboard.
 
