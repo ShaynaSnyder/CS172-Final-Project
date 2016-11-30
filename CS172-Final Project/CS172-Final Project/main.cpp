@@ -163,7 +163,7 @@ int main()
                 xlocation[i] = 0;
         }
         //if location is not between 1 and 5, while loop runs another iteration
-        while(!(xlocation[i]>=1 && xlocation[i]<=5))
+        while(!(xlocation[i] >= 1 && xlocation[i] <= 5))
         {
             int xinput, yinput;
             cout << "That is not a valid location for your ship.\n";
@@ -174,7 +174,7 @@ int main()
             cin >> yinput;
             ylocation[i]=yinput;
             //tests whether or not there is already a boat placed in this location
-            for(int j=0; j<i; j++)
+            for(int j = 0; j < i; j++)
             {
                 if((ylocation[i]==ylocation[j]) && (xlocation[i]==xlocation[j]))
                 {
