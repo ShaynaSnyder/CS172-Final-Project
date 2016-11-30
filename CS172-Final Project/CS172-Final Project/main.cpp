@@ -158,12 +158,16 @@ int main()
             }
         }
         //if location is not between 1 and 5, while loop runs another iteration
+<<<<<<< HEAD
         while(!(xlocation[i]>=1 && xlocation[i]<=5 && ylocation[i]>=1 && ylocation[i]<=5 && sameplace==0))
             if((ylocation[i] == ylocation[j]) && xlocation[i] == xlocation[j])
                 xlocation[i] = 0;
         }
         //if location is not between 1 and 5, while loop runs another iteration
         while(!(xlocation[i] >= 1 && xlocation[i] <= 5))
+=======
+        while(!(xlocation[i]>=1 && xlocation[i]<=5))
+>>>>>>> bd88580332fae503a398a9e9feefdc4eb6004998
         {
             int xinput, yinput;
             cout << "That is not a valid location for your ship.\n";
@@ -186,10 +190,6 @@ int main()
             }
         };
     }
-            cin >> ylocation[i];
-        }
-    }
-    
     
     
     // Classes for different types of ships
