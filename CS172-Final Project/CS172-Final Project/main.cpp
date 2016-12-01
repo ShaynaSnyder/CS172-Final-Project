@@ -24,7 +24,7 @@ void playerBoard(int array1[5][5]) // Function to initialize the gameboard for p
     {
         for (int y = 0; y < 5; y++)
         {
-            array1[x][y] = occupied;
+            array1[x][y] = empty;
         }
     }
 }
@@ -36,43 +36,47 @@ void computerBoard( int array1[5][5] ) // Function to initialize the gameboard f
     {
         for (int y = 0; y < 5; y++)
         {
-            array1[x][y] = occupied;
+            array1[x][y] = empty;
         }
     }
 }
 
 void printPlayerBoard(int array2[5][5])
 {
-    for(char a = 'A'; a <= 'E'; a++)
+    for(int i=1; i<=5; i++)
     { //letter coordinates
-        cout << setw(4) << a;
+        cout << setw(4) << i;
     }
     cout << endl;
     
-    for(int i = 1; i <= 5; i++)
+    for(int a=0; a<=4; a++)
     { //number coordinates
-        if(i == 10)
-            cout << i;
+        if(a == 10)
+            cout << (char) (a+65);
         else
-            cout << " " << i ;
+            cout << " " << (char) (a+65) ;
         
-        for(int j = 0; j < 5 ; j++)
+        for(int j = 0; j <=4 ; j++)
         {
             
-            if(array2[i][j] == occupied || array2[i][j] == empty)
+            if(array2[a][j] == occupied)
+            {
+                cout << setw(4) << "X |";
+            }
+            if(array2[a][j] == empty)
             {
                 cout << setw(4) << " |" ;
             }
-            else if(array2[i][j] == missed )
+            else if(array2[a][j] == missed )
             {
-                cout << setw(4) << "M|";
+                cout << setw(4) << "M |";
             }
-            else if(array2[i][j] == hit )
+            else if(array2[a][j] == hit )
             {
-                cout << setw(4) << "X|";
+                cout << setw(4) << "H |";
             }
         }
-        cout << "\n";
+        cout << "\n" << "______________________" << endl;
     }
 }
 
@@ -120,12 +124,16 @@ int main()
     //declares string array to hold ship names
     string shipNames[5] = {"Patrol Boat", "Destroyer", "Submarine", "Battleship", "Carrier"};
     //declares int arrays to hold ship locations
-    int xlocation[5], ylocation[5];
+    int xlocation[5], ylocation[5], yourBoard[5][5]={}, repeat=0;
     char letterlocation[5];
-    cout << "Background information and rules.\n";
+    cout << "\nBackground information and rules.\n";
     //prompts user to place their ships using for loop
-    for(int i=0; i<5; i++)
+    
+    for(int i=0; i<=4; i++)
     {
+        do
+        {
+        repeat=0;
         cout << "Place your " << shipNames[i] << ".\nHorizontal location (1-5): ";
         cin >> xlocation[i];
         cout << "Vertical location (a, b, c, d, or e): ";
@@ -147,16 +155,16 @@ int main()
                 case 'e':
                 ylocation[i]=5;
         }
-        int sameplace = 0;
         //tests whether or not there is already a boat placed in this location
         for(int j=0; j<i; j++)
         {
             if((ylocation[i]==ylocation[j]) && xlocation[i]==xlocation[j])
             {
                 cout << "You have already placed a ship here.\n";
-                sameplace = 1;
+                repeat = 1;
             }
         }
+<<<<<<< HEAD
         //if location is not between 1 and 5, while loop runs another iteration
 
         while(!(xlocation[i]>=1 && xlocation[i]<=5))
@@ -181,9 +189,17 @@ int main()
                     sameplace = 0;
             }
         };
+=======
+        //if location is not between 1 and 5, repeat variable is set equal to 1
+        if(!(ylocation[i]>=1 && ylocation[i]<=5 && xlocation[i]>=1 && xlocation[i]<=5))
+            repeat = 1;
+        if(repeat == 1)
+            cout << "This is not a valid input.\n";
+    }while(repeat==1);
+        yourBoard[xlocation[i]][ylocation[i]]=occupied;
+>>>>>>> fa698934a4d38905e7b234772fd776275a949025
     }
-    
-    
+    printPlayerBoard(yourBoard);
     // Classes for different types of ships
     // cout a 2-d array(?). Use chars to show if ship has been hit (h) or missed (m)
     // Should we output 2 arrays? One for player's ships and one for player's guesses?
