@@ -19,8 +19,8 @@ int board[5][5]; // Two-dimensional array for gameboard.
 
 void playerBoard(int array1[5][5]) // Function to initialize the gameboard for player
 {
-    // create a blank board
-    for (int x=0; x<5; x++)
+    // create a blank board of size 5
+    for (int x = 0; x < 5; x++)
     {
         for (int y = 0; y < 5; y++)
         {
@@ -29,9 +29,9 @@ void playerBoard(int array1[5][5]) // Function to initialize the gameboard for p
     }
 }
 
-void computerBoard( int array1[5][5] ) // Function to initialize the gameboard for player
+void computerBoard( int array1[5][5] ) // Function to initialize the gameboard for computer
 {
-    // create a blank board
+    // create a blank board of size 5
     for (int x=0; x<5; x++)
     {
         for (int y = 0; y < 5; y++)
@@ -43,36 +43,36 @@ void computerBoard( int array1[5][5] ) // Function to initialize the gameboard f
 
 void printPlayerBoard(int array2[5][5])
 {
-    for(int i=1; i<=5; i++)
-    { //letter coordinates
+    for(int i = 1; i <= 5; i++)                     // Set size of board to 5
+    {                                               // Number coordinates
         cout << setw(4) << i;
     }
     cout << endl;
     
-    for(int a=0; a<=4; a++)
-    { //number coordinates
-        if(a == 10)
-            cout << (char) (a+65);
+    for(int a = 0; a <= 4; a++)
+    {                                               // Letter coordinates
+        if(a == 5)
+            cout << (char) (a + 65);
         else
-            cout << " " << (char) (a+65) ;
+            cout << " " << (char) (a + 65) ;
         
         for(int j = 0; j <=4 ; j++)
         {
             
             if(array2[a][j] == occupied)
-            {
+            {                                       // Show where the ships are
                 cout << setw(4) << "X |";
             }
             if(array2[a][j] == empty)
-            {
+            {                                       // Show empty spaces
                 cout << setw(4) << " |" ;
             }
             else if(array2[a][j] == missed )
-            {
+            {                                       // Show if computer guesses missed
                 cout << setw(4) << "M |";
             }
             else if(array2[a][j] == hit )
-            {
+            {                                       // Show if computer hit a ship
                 cout << setw(4) << "H |";
             }
         }
@@ -83,14 +83,14 @@ void printPlayerBoard(int array2[5][5])
 void printComputerBoard(int array2[5][5])
 {
     for(char a = 'A'; a <= 'E'; a++)
-    { //letter coordinates
+    {                                               // Letter coordinates
         cout << setw(4) << a;
     }
     cout << endl;
     
     for(int i = 1; i <= 5; i++)
-    { //number coordinates
-        if(i == 10)
+    {                                               // Number coordinates
+        if(i == 5)
             cout << i;
         else
             cout << " " << i ;
@@ -99,15 +99,15 @@ void printComputerBoard(int array2[5][5])
         {
             
             if(array2[i][j] == occupied || array2[i][j] == empty)
-            {
+            {                                       // Show empty and ship spaces
                 cout << setw(4) << " |" ;
             }
             else if(array2[i][j] == missed )
-            {
+            {                                       // Show player guesses if they miss
                 cout << setw(4) << "M|";
             }
             else if(array2[i][j] == hit )
-            {
+            {                                       // Show player guesses if they hit
                 cout << setw(4) << "X|";
             }
         }
@@ -126,14 +126,15 @@ int main()
     //declares int arrays to hold ship locations
     int xlocation[5], ylocation[5], yourBoard[5][5]={}, repeat=0;
     char letterlocation[5];
-    cout << "\nBackground information and rules.\n";
-    //prompts user to place their ships using for loop
+    cout << "\nWelcome to the game of Battleship!\n";
+    cout << "Rules. Blah blah blah blah\n";
     
-    for(int i=0; i<=4; i++)
-    {
+    
+    for(int i = 0; i <= 4; i++)                     // Use a loop to place player ships. If a ship is placed in the same place
+    {                                               // as another ship, use a loop until it is in the correct place
         do
         {
-        repeat=0;
+        repeat = 0;
         cout << "Place your " << shipNames[i] << ".\nHorizontal location (1-5): ";
         cin >> xlocation[i];
         cout << "Vertical location (a, b, c, d, or e): ";
@@ -141,63 +142,36 @@ int main()
         switch (letterlocation[i])
         {
                 case 'a':
-                ylocation[i]=1;
+                ylocation[i] = 1;
                 break;
                 case 'b':
-                ylocation[i]=2;
+                ylocation[i] = 2;
                 break;
                 case 'c':
-                ylocation[i]=3;
+                ylocation[i] = 3;
                 break;
                 case 'd':
-                ylocation[i]=4;
+                ylocation[i] = 4;
                 break;
                 case 'e':
-                ylocation[i]=5;
+                ylocation[i] = 5;
         }
-        //tests whether or not there is already a boat placed in this location
-        for(int j=0; j<i; j++)
+        // Tests whether or not there is already a boat placed in this location
+        for(int j = 0; j < i; j++)
         {
-            if((ylocation[i]==ylocation[j]) && xlocation[i]==xlocation[j])
+            if(ylocation[i]==ylocation[j] && xlocation[i]==xlocation[j])
             {
                 cout << "You have already placed a ship here.\n";
                 repeat = 1;
             }
         }
-<<<<<<< HEAD
-        //if location is not between 1 and 5, while loop runs another iteration
-
-        while(!(xlocation[i]>=1 && xlocation[i]<=5))
-        {
-            int xinput, yinput;
-            cout << "That is not a valid location for your ship.\n";
-            cout << "Place your " << shipNames[i] << ".\nHorizontal location (1-5): ";
-            cin >> xinput;
-            xlocation[i]=xinput;
-            cout << "Vertical location (a, b, c, d, or e):";
-            cin >> yinput;
-            ylocation[i]=yinput;
-            //tests whether or not there is already a boat placed in this location
-            for(int j = 0; j < i; j++)
-            {
-                if((ylocation[i]==ylocation[j]) && (xlocation[i]==xlocation[j]))
-                {
-                    cout << "You have already placed a ship here.";
-                    sameplace = 1;
-                }
-                else
-                    sameplace = 0;
-            }
-        };
-=======
-        //if location is not between 1 and 5, repeat variable is set equal to 1
+        // If location is not between 1 and 5, repeat variable is set equal to 1
         if(!(ylocation[i]>=1 && ylocation[i]<=5 && xlocation[i]>=1 && xlocation[i]<=5))
             repeat = 1;
         if(repeat == 1)
             cout << "This is not a valid input.\n";
     }while(repeat==1);
         yourBoard[xlocation[i]][ylocation[i]]=occupied;
->>>>>>> fa698934a4d38905e7b234772fd776275a949025
     }
     printPlayerBoard(yourBoard);
     // Classes for different types of ships
