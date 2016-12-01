@@ -18,9 +18,9 @@ const int hit      = 3;  // hit
 void playerBoard(int array1[5][5]) //function initializes gameboard for player
 {
     // create a blank board
-    for (int x=1; x<=5; x++)
+    for (int x = 0; x <= 4; x++)
     {
-        for (int y = 0; y < 5; y++)
+        for (int y = 0; y <= 4; y++)
         {
             array1[x][y] = empty;
         }
@@ -120,7 +120,7 @@ int main()
         do
         {
         repeat=0;
-        cout << "Place your " << shipNames[i-1] << ".\nHorizontal location (1-5): ";
+        cout << "\nPlace your " << shipNames[i-1] << ".\nHorizontal location (1-5): ";
         cin >> xlocation[i];
         cout << "Vertical location (a, b, c, d, or e): ";
         cin >> letterlocation[i];
