@@ -15,12 +15,10 @@ const int occupied = 1;  // contains a ship
 const int missed   = 2;  // missed
 const int hit      = 3;  // hit
 
-int board[5][5]; // Two-dimensional array for gameboard.
-
 void playerBoard(int array1[5][5]) // Function to initialize the gameboard for player
 {
     // create a blank board
-    for (int x=0; x<5; x++)
+    for (int x=1; x<=5; x++)
     {
         for (int y = 0; y < 5; y++)
         {
@@ -32,9 +30,9 @@ void playerBoard(int array1[5][5]) // Function to initialize the gameboard for p
 void computerBoard( int array1[5][5] ) // Function to initialize the gameboard for player
 {
     // create a blank board
-    for (int x=0; x<5; x++)
+    for (int x=1; x<=5; x++)
     {
-        for (int y = 0; y < 5; y++)
+        for (int y = 1; y <= 5; y++)
         {
             array1[x][y] = empty;
         }
@@ -43,40 +41,35 @@ void computerBoard( int array1[5][5] ) // Function to initialize the gameboard f
 
 void printPlayerBoard(int array2[5][5])
 {
+    cout << "  ";
     for(int i=1; i<=5; i++)
     { //letter coordinates
         cout << setw(4) << i;
     }
-    cout << endl;
-    
-    for(int a=0; a<=4; a++)
+    cout << "\n" << "   _____________________" << endl;    for(int a=1; a<=5; a++)
     { //number coordinates
-        if(a == 10)
-            cout << (char) (a+65);
-        else
-            cout << " " << (char) (a+65) ;
-        
-        for(int j = 0; j <=4 ; j++)
+        cout << " " << (char) (a+64) << " |";
+        for(int j = 1; j <=5; j++)
         {
             
-            if(array2[a][j] == occupied)
+            if(array2[j][a] == occupied)
             {
                 cout << setw(4) << "X |";
             }
-            if(array2[a][j] == empty)
+            if(array2[j][a] == empty)
             {
                 cout << setw(4) << " |" ;
             }
-            else if(array2[a][j] == missed )
+            else if(array2[j][a] == missed )
             {
                 cout << setw(4) << "M |";
             }
-            else if(array2[a][j] == hit )
+            else if(array2[j][a] == hit )
             {
                 cout << setw(4) << "H |";
             }
         }
-        cout << "\n" << "______________________" << endl;
+        cout << "\n" << "   _____________________" << endl;
     }
 }
 
@@ -117,24 +110,23 @@ void printComputerBoard(int array2[5][5])
 
 int main()
 {
-    playerBoard(board);
-    printPlayerBoard(board);
-    
     //to decrease variation, all ships will be modeled as having a size of 1 unit
     //declares string array to hold ship names
     string shipNames[5] = {"Patrol Boat", "Destroyer", "Submarine", "Battleship", "Carrier"};
     //declares int arrays to hold ship locations
-    int xlocation[5], ylocation[5], yourBoard[5][5]={}, repeat=0;
+    int xlocation[5], ylocation[5], board[5][5], repeat=0;
     char letterlocation[5];
     cout << "\nBackground information and rules.\n";
+    playerBoard(board);
+    printPlayerBoard(board);
     //prompts user to place their ships using for loop
     
-    for(int i=0; i<=4; i++)
+    for(int i=1; i<=5; i++)
     {
         do
         {
         repeat=0;
-        cout << "Place your " << shipNames[i] << ".\nHorizontal location (1-5): ";
+        cout << "Place your " << shipNames[i-1] << ".\nHorizontal location (1-5): ";
         cin >> xlocation[i];
         cout << "Vertical location (a, b, c, d, or e): ";
         cin >> letterlocation[i];
@@ -156,7 +148,7 @@ int main()
                 ylocation[i]=5;
         }
         //tests whether or not there is already a boat placed in this location
-        for(int j=0; j<i; j++)
+        for(int j=1; j<i; j++)
         {
             if((ylocation[i]==ylocation[j]) && xlocation[i]==xlocation[j])
             {
@@ -170,7 +162,7 @@ int main()
         if(repeat == 1)
             cout << "This is not a valid input.\n";
     }while(repeat==1);
-        yourBoard[xlocation[i]][ylocation[i]]=occupied;
+        board[xlocation[i]][ylocation[i]]=occupied;
     }
     printPlayerBoard(yourBoard);
     // Classes for different types of ships
