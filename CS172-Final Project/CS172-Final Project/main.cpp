@@ -29,7 +29,7 @@ void playerBoard(int array1[5][5]) //function initializes gameboard for player
 void computerBoard(int array1[5][5]) //function initializes gameboard for computer
 {
     // create a blank board
-    for (int x=0; x<=4; x++)
+    for (int x = 0; x <= 4; x++)
     {
         for (int y = 0; y <= 4; y++)
         {
@@ -41,15 +41,15 @@ void computerBoard(int array1[5][5]) //function initializes gameboard for comput
 void printPlayerBoard(int array2[5][5])         //function outputs the player's board
 {
     cout << "\n  ";
-    for(int i=1; i<=5; i++)                     //outputs column names
+    for(int i = 1; i <= 5; i++)                     //outputs column names
     { //number coordinates
         cout << setw(4) << i;
     }
     cout << "\n" << "   _____________________" << endl;
-    for(int a=0; a<=4; a++)
+    for(int a = 0; a <= 4; a++)
     { //letter coordinates
-        cout << " " << (char) (a+65) << " |";   //outputs row names
-        for(int j = 0; j <=4; j++)
+        cout << " " << (char) (a + 65) << " |";   //outputs row names
+        for(int j = 0; j <= 4; j++)
         {
             
             if(array2[j][a] == occupied)        //shows that your ship is occupying this space
@@ -76,15 +76,15 @@ void printPlayerBoard(int array2[5][5])         //function outputs the player's 
 void printComputerBoard(int array2[5][5])
 {
     cout << "  ";
-    for(int i=1; i<=5; i++)                     //outputs column names
+    for(int i = 1; i <= 5; i++)                     //outputs column names
     { //number coordinates
         cout << setw(4) << i;
     }
     cout << "\n" << "   _____________________" << endl;
-    for(int a=0; a<=4; a++)
+    for(int a = 0; a <= 4; a++)
     { //letter coordinates
-        cout << " " << (char) (a+65) << " |";   //outputs row names
-        for(int j = 0; j <=4; j++)
+        cout << " " << (char) (a + 65) << " |";   //outputs row names
+        for(int j = 0; j <= 4; j++)
         {
             
             if((array2[j][a] == occupied) || (array2[j][a] == empty))   //space appears blank (could be empty or occupied)
@@ -144,7 +144,7 @@ int main()
                 ylocation[i] = 4;
         }
         //tests whether or not there is already a boat placed in this location
-        for(int j=1; j<i; j++)
+        for(int j = 1; j < i; j++)
         {
             if(ylocation[i]==ylocation[j] && xlocation[i]==xlocation[j])
             {
@@ -161,9 +161,9 @@ int main()
         board[xlocation[i]-1][ylocation[i]]=occupied;
     }
     printPlayerBoard(board);
-    // Classes for different types of ships
-    // cout a 2-d array(?). Use chars to show if ship has been hit (h) or missed (m)
-    // Should we output 2 arrays? One for player's ships and one for player's guesses?
+
+    
+    
    
     return 0;
 }

@@ -7,3 +7,23 @@
 //
 
 #include "Ships.hpp"
+Ships::Ships()
+{
+    
+}
+void Ships::hit()
+{
+    
+}
+
+void Ships::miss()
+{
+    
+}
+
+void Ships::sunkenShips(string name)
+{
+    // if (space == 'H')
+    // cout << name << " has been destroyed"
+    
+}
