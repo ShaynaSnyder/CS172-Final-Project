@@ -18,6 +18,8 @@ void playerBoard(int array1[5][5]); //declares void function to create the playe
 void computerBoard(int array1[5][5]); //declares void function to create the computer's board
 void printPlayerBoard(int array2[5][5]); //declares void function to send the player's board to the screen
 void printComputerBoard(int array2[5][5]); //declares void function to send the computer's board to the screen
+void playerGuesses(int array1[5][5]);
+void computerGuesses(int array1[5][5]);
 
 int main()
 {
@@ -59,7 +61,7 @@ int main()
                 ylocation[i] = 4;
         }
         //tests whether or not there is already a boat placed in this location
-        for(int j = 1; j < i; j++)
+        for(int j = 0; j < i; j++)
         {
             if(ylocation[i] == ylocation[j] && xlocation[i]==xlocation[j])
             {
@@ -85,7 +87,7 @@ int main()
             xcomputer[k] = rand()%5;
             ycomputer[k] = rand()%5;
             //tests whether or not there is already a boat placed in this location
-            for(int l = 1; l < k; l++)
+            for(int l = 0; l < k; l++)
             {
                 if(ylocation[k] == ylocation[l] && xlocation[k]==xlocation[l])
                     repeat = 1;
@@ -190,4 +192,14 @@ void printComputerBoard(int array2[5][5])
         }
         cout << "\n" << "   _____________________" << endl;
     }
+}
+
+void playerGuesses(int array1[5][5])
+{
+    
+}
+
+void computerGuesses(int array1[5][5])
+{
+    
 }
