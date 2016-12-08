@@ -30,6 +30,7 @@ int main()
     cout << "\nBackground information and rules.\n";
     playerBoard(board); //calls void function that creates the player's board
     printPlayerBoard(board); //calls void function that outputs the player's board
+    
     //prompts user to place their ships using for loop
     for(int i=0; i<=4; i++)
     {
@@ -60,7 +61,7 @@ int main()
         //tests whether or not there is already a boat placed in this location
         for(int j = 1; j < i; j++)
         {
-            if(ylocation[i]==ylocation[j] && xlocation[i]==xlocation[j])
+            if(ylocation[i] == ylocation[j] && xlocation[i]==xlocation[j])
             {
                 cout << "You have already placed a ship here.\n";
                 repeat = 1;
@@ -71,12 +72,13 @@ int main()
             repeat = 1;
         if(repeat == 1)
             cout << "This is not a valid input.\n";
-    }while(repeat==1);
+    }while(repeat == 1);
         board[xlocation[i]-1][ylocation[i]]=occupied;
     }
     printPlayerBoard(board); //calls void function printPlayerBoard
     return 0;
 }
+
 //defines the function that creates the player's board
 void playerBoard(int array1[5][5])
 {
@@ -89,6 +91,7 @@ void playerBoard(int array1[5][5])
         }
     }
 }
+
 //defines the function that creates the computer's board
 void computerBoard(int array1[5][5])
 {
@@ -101,6 +104,7 @@ void computerBoard(int array1[5][5])
         }
     }
 }
+
 //defines the function that sends the player's board to the screen
 void printPlayerBoard(int array2[5][5])
 {
@@ -136,6 +140,7 @@ void printPlayerBoard(int array2[5][5])
         cout << "\n" << "   _____________________" << endl;
     }
 }
+
 //defines function that sends the computer's board to the screen
 void printComputerBoard(int array2[5][5])
 {
