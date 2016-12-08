@@ -10,10 +10,10 @@
 
 using namespace std;
 
-const int empty    = 0;  // empty
-const int occupied = 1;  // contains a ship
-const int missed   = 2;  // missed
 const int hit      = 3;  // hit
+const int empty    = 0;  // empty
+const int missed   = 2;  // missed
+const int occupied = 1;  // contains a ship
 void playerBoard(int array1[5][5]); //declares void function to create the player's board
 void computerBoard(int array1[5][5]); //declares void function to create the computer's board
 void printPlayerBoard(int array2[5][5]); //declares void function to send the player's board to the screen
@@ -107,9 +107,7 @@ void playerBoard(int array1[5][5])
     for (int x = 0; x <= 4; x++)
     {
         for (int y = 0; y <= 4; y++)
-        {
             array1[x][y] = empty;
-        }
     }
 }
 
@@ -120,9 +118,7 @@ void computerBoard(int array1[5][5])
     for (int x = 0; x <= 4; x++)
     {
         for (int y = 0; y <= 4; y++)
-        {
             array1[x][y] = empty;
-        }
     }
 }
 
@@ -142,21 +138,13 @@ void printPlayerBoard(int array2[5][5])
         {
             
             if(array2[j][a] == occupied)        //shows that your ship is occupying this space
-            {
                 cout << setw(4) << "X |";
-            }
             if(array2[j][a] == empty)           //leaves this space empty
-            {
                 cout << setw(4) << " |" ;
-            }
             else if(array2[j][a] == missed )    //shows if computer misses your ship
-            {
                 cout << setw(4) << "M |";
-            }
             else if(array2[j][a] == hit )       //shows if computer hits your ship
-            {
                 cout << setw(4) << "H |";
-            }
         }
         cout << "\n" << "   _____________________" << endl;
     }
@@ -178,17 +166,11 @@ void printComputerBoard(int array2[5][5])
         {
             
             if((array2[j][a] == occupied) || (array2[j][a] == empty))   //space appears blank (could be empty or occupied)
-            {
                 cout << setw(4) << " |" ;
-            }
             else if(array2[j][a] == missed )    //shows your missed shots
-            {
                 cout << setw(4) << "M |";
-            }
             else if(array2[j][a] == hit )       //shows your hits
-            {
                 cout << setw(4) << "H |";
-            }
         }
         cout << "\n" << "   _____________________" << endl;
     }
