@@ -25,7 +25,7 @@ int main()
     //declares string array to hold ship names
     string shipNames[5] = {"Patrol Boat", "Destroyer", "Submarine", "Battleship", "Carrier"};
     //declares int arrays to hold ship locations
-    int xlocation[5], ylocation[5], board[5][5], repeat=0;
+    int xlocation[5], ylocation[5], xcomputer[5], ycomputer[5], board[5][5], compBoard[5][5], repeat=0;
     char letterlocation[5];
     cout << "\nBackground information and rules.\n";
     playerBoard(board); //calls void function that creates the player's board
@@ -75,6 +75,25 @@ int main()
     }while(repeat == 1);
         board[xlocation[i]-1][ylocation[i]]=occupied;
     }
+    
+    //places computer's ships using for loop and random number generators
+    for(int k=0; k<=4; k++)
+    {
+        do
+        {
+            repeat=0;
+            xcomputer[k] = rand()%5;
+            ycomputer[k] = rand()%5;
+            //tests whether or not there is already a boat placed in this location
+            for(int l = 1; l < k; l++)
+            {
+                if(ylocation[k] == ylocation[l] && xlocation[k]==xlocation[l])
+                    repeat = 1;
+            }
+        }while(repeat == 1);
+        compBoard[xlocation[k]][ylocation[k]]=occupied;
+    }
+    printComputerBoard(compBoard); //calls void function printComputerBoard
     printPlayerBoard(board); //calls void function printPlayerBoard
     return 0;
 }
@@ -108,7 +127,7 @@ void computerBoard(int array1[5][5])
 //defines the function that sends the player's board to the screen
 void printPlayerBoard(int array2[5][5])
 {
-    cout << "\n  ";
+    cout << "\n        Your Board\n  ";
     for(int i = 1; i <= 5; i++)                     //outputs column names
     { //number coordinates
         cout << setw(4) << i;
@@ -144,7 +163,7 @@ void printPlayerBoard(int array2[5][5])
 //defines function that sends the computer's board to the screen
 void printComputerBoard(int array2[5][5])
 {
-    cout << "  ";
+    cout << "   Your Opponent's Board\n  ";
     for(int i = 1; i <= 5; i++)                     //outputs column names
     { //number coordinates
         cout << setw(4) << i;
