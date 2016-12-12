@@ -13,7 +13,6 @@
 
 using namespace std;
 
-
 int main()
 {
     cout << endl << "                       Welcome to\n";
@@ -39,15 +38,12 @@ int main()
     cout << "\nLET'S PLAY " << player1.getName(name);
     cout << "!\nThis is your board. It is empty right now. Place your ships on the board.\nTo place ships on the board or make a guess, enter coordinates like 1d, 3a, 5b, etc.\n";
 
-
     player1.createBoard(board);
     player1.printBoard(board);
     player1.placeShips(board);
     
     Computer player2;
     player2.createBoard(compBoard);
-    player2.printBoard(compBoard);
-    player2.placeShips(compBoard);
     
     for (int i = 1; i <= 25; i++)
     {
@@ -57,6 +53,8 @@ int main()
             cout << "WOOO";
 //            player2.makeGuess();
     }
+
+    player2.placeShips(compBoard);
     
     return 0;
 }
