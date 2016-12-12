@@ -11,6 +11,25 @@
 #include "Computer.hpp"
 #include "Player.hpp"
 
+void playerGuesses();
+void computerGuesses();
+int x, y, xlocation, ylocation;
+
+
+void checkGuesses()
+{
+    for(int i = 0; i <= 4; i++)
+    {
+        if (x == xlocation[i] && y == ylocation[i])
+        {
+            sunk = 1;
+            cout << "You sunk your oppenent's (name of ship)!\n\n";
+            // Space = 'H';
+        }
+    }
+    cout << "You missed" << endl;
+}
+
 using namespace std;
 
 int main()
@@ -46,16 +65,36 @@ int main()
     player2.createBoard(compBoard);
     player2.placeShips(compBoard);
     
-    for (int i = 1; i <= 500; i++)
+//    for (int i = 1; i <= 500; i++)
+//    {
+//        if (i % 2 != 0)
+//            player1.makeGuessH(compBoard);
+//        else
+//            player2.makeGuessC(board);
+//    }
+    for (int i = 1; i <= 100; i++)
     {
-        if (i % 2 != 0)
-            player1.makeGuess();
-        else
-            cout << "It's the computer's turn";
-//            player2.makeGuess();
+    playerGuesses();
+    player1.checkGuesses(compBoard);
+    computerGuesses();
+    player2.checkGuesses(board);
     }
-
     
     return 0;
+}
+
+void playerGuesses()
+{
+    cout << "Make your guess: ";
+    cin >> x >> y;
+  
+}
+
+void computerGuesses()
+{
+    cout << "It is the computer's turn to guess." << endl;
+    sunk = 0;
+    x = rand() % 5;
+    y = rand() % 5;
 }
 

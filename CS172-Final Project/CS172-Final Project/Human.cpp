@@ -98,22 +98,21 @@ void Human::placeShips(int array[5][5])
     printBoard(board);
 }
 
-void Human::makeGuess()
+void Human::makeGuessC(int array[5][5])
 {
-    cout << "Make your guess: ";
-    int x, sunk=0;
-    char y;
-    cin >> x >> y;
-    for (int i = 0; i <= 4; i++)
+    cout << "It is the computer's turn to guess." << endl;
+    int x, y, sunk;
+    sunk = 0;
+    x = rand() % 5;
+    y = rand() % 5;
+    for(int i = 0; i <=4; i++)
     {
-        if (x == xcomputer[i] && y == ycomputer[i])
+        if (x == xlocation[i] && y == ylocation[i])
         {
             sunk = 1;
-            cout << "You sunk your oppenent's (name of ship)!\n";
+            cout << "You sunk your oppenent's (name of ship)!\n\n";
             // Space = 'H';
         }
     }
-    if(sunk==0)
-        cout << "You missed!\n";
+    cout << "You missed" << endl;
 }
-

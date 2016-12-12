@@ -18,6 +18,7 @@ class Computer: public Player
 public:
     void printBoard(int array[5][5]);
     void placeShips(int array[5][5]);
+    void makeGuessH(int array[5][5]);
 };
 
 #endif /* Computer_hpp */

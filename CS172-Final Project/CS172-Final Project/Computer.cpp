@@ -60,7 +60,23 @@ void Computer::placeShips(int array1[5][5])
 
 }
 
-//void makeGuess()
-//{
-//    
-//}
+void Computer::makeGuessH(int array[5][5])
+{
+    
+    cout << "Make your guess: ";
+    int x, sunk = 0;
+    char y;
+    cin >> x >> y;
+    for (int i = 0; i <= 4; i++)
+    {
+        if (x == xcomputer[i] && y == ycomputer[i])
+        {
+            sunk = 1;
+            cout << "You sunk your oppenent's (name of ship)!\n\n";
+            // Space = 'H';
+        }
+    }
+    
+    cout << "You missed!\n\n";
+    
+}

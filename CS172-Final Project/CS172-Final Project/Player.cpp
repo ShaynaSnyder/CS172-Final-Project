@@ -10,6 +10,7 @@
 #include <iostream>
 using namespace std;
 
+
 void Player::createBoard(int array[5][5])
 {
     // create a blank board
@@ -19,5 +20,7 @@ void Player::createBoard(int array[5][5])
             array[x][y] = empty;
     }
 }
+
+
 
 

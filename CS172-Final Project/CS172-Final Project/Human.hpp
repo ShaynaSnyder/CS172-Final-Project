@@ -23,7 +23,7 @@ public:
     string getName(string);
     void printBoard(int array[5][5]);
     void placeShips(int array[5][5]);
-    void makeGuess();
+    void makeGuessC(int array[5][5]);
     
     
 };
