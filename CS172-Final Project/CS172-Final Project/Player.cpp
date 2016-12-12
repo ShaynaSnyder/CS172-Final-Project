@@ -10,24 +10,6 @@
 #include <iostream>
 using namespace std;
 
-void Player::setPlayerNumber(const int& num)
-{
-    this->num = num;
-}
-
-void Player::getPlayerNumber() const
-{
-    if (num == 1)
-    {
-        cout << "You will guess first." << endl;
-    }
-    else
-    {
-        cout << "You will guess second." << endl;
-    }
-    
-}
-
 void Player::createBoard(int array[5][5])
 {
     // create a blank board
@@ -36,4 +18,9 @@ void Player::createBoard(int array[5][5])
         for (int y = 0; y <= 4; y++)
             array[x][y] = empty;
     }
+}
+
+void Player:: makeGuess()
+{
+    cout << "Make a guess: ";
 }

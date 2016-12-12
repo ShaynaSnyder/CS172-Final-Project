@@ -23,8 +23,7 @@ public:
     const int hit      = 3;  // hit
     int xlocation[5], ylocation[5], xcomputer[5], ycomputer[5], board[5][5], compBoard[5][5], repeat=0;
     char letterlocation[5];
-    void setPlayerNumber(const int& num);
-    void getPlayerNumber() const;
+    void makeGuess();
     
     
     string shipNames[5] = {"Patrol Boat", "Destroyer", "Submarine", "Battleship", "Carrier"};

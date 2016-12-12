@@ -20,8 +20,7 @@ class Human: public Player
 public:
     
     Human(string);
-    void setName(string);
-    void getName();
+    string getName(string);
     void printBoard(int array[5][5]);
     void placeShips(int array[5][5]);
     

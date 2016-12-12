@@ -13,12 +13,13 @@ using namespace std;
 
 Human::Human(string name)
 {
-    setName(name);
+    name = name;
 }
 
-void Human::setName(string name)
+string Human::getName(string name)
 {
     name = name;
+    return name;
 }
 
 void Human::printBoard(int array[5][5])
@@ -55,10 +56,8 @@ void Human::placeShips(int array[5][5])
         do
         {
             repeat=0;
-            cout << "\nPlace your " << shipNames[i] << ".\nHorizontal location (1-5): ";
-            cin >> xlocation[i];
-            cout << "Vertical location (a, b, c, d, or e): ";
-            cin >> letterlocation[i];
+            cout << "\nPlace your " << shipNames[i] << ".\nEnter a number (1-5) and a letter (a-e): ";
+            cin >> xlocation[i] >> letterlocation[i];
             switch (letterlocation[i])
             {
                 case 'a':
