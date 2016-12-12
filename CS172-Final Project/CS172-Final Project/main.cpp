@@ -44,17 +44,17 @@ int main()
     
     Computer player2;
     player2.createBoard(compBoard);
+    player2.placeShips(compBoard);
     
-    for (int i = 1; i <= 25; i++)
+    for (int i = 1; i <= 500; i++)
     {
         if (i % 2 != 0)
             player1.makeGuess();
         else
-            cout << "WOOO";
+            cout << "It's the computer's turn";
 //            player2.makeGuess();
     }
 
-    player2.placeShips(compBoard);
     
     return 0;
 }

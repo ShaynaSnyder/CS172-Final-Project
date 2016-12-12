@@ -106,13 +106,12 @@ void Human::makeGuess()
     {
         if (x == xcomputer[i] && y == ycomputer[i])
         {
-            cout << "You hit a ship";
+            cout << "You hit a ship" << endl;
             // Space = 'H';
         }
         else
-            cout << "You missed";
+            cout << "You missed" << endl;
             // Space = 'M';
-            
     }
 }
 
