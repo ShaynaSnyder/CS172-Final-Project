@@ -34,6 +34,7 @@ void Computer::printBoard(int array[5][5])
         }
         cout << "\n" << "   _____________________" << endl;
     }
+    cout << endl;
 }
 
 void Computer::placeShips(int array[5][5])
