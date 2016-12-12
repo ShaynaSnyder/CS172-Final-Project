@@ -7,6 +7,7 @@
 //
 
 #include "Computer.hpp"
+#include "Player.hpp"
 #include <iomanip>
 using namespace std;
 
@@ -15,7 +16,7 @@ Computer::Computer()
     
 }
 
-void Computer::printBoard(int array[5][5])
+void Computer::printBoard(int array1[5][5])
 {
     cout << "   Your Opponent's Board\n  ";
     for(int i = 1; i <= 5; i++)                     //outputs column names
@@ -30,20 +31,20 @@ void Computer::printBoard(int array[5][5])
         {
             
             //if((array[j][a] == occupied) || (array[j][a] == empty))   //space appears blank (could be empty or occupied)
-            if(array[j][a] ==empty)
+            if(array1[j][a] ==empty)
                 cout << setw(4) << " |" ;
-            else if(array[j][a] ==occupied)
+            else if(array1[j][a] ==occupied)
                 cout << setw(4) << "  X";
-            else if(array[j][a] == missed )    //shows your missed shots
+            else if(array1[j][a] == missed )    //shows your missed shots
                 cout << setw(4) << "M |";
-            else if(array[j][a] == hit )       //shows your hits
+            else if(array1[j][a] == hit )       //shows your hits
                 cout << setw(4) << "H |";
         }
         cout << "\n" << "   _____________________" << endl;
     }
 }
 
-void Computer::placeShips(int array[5][5])
+void Computer::placeShips(int array1[5][5])
 {
     //places computer's ships using for loop and random number generators
     for(int k = 0; k <= 4; k++)
@@ -51,18 +52,21 @@ void Computer::placeShips(int array[5][5])
         do
         {
             repeat=0;
-            xcomputer[k] = rand()%5;
-            ycomputer[k] = rand()%5;
+            xcomputer[k] = rand() % 5;
+            ycomputer[k] = rand() % 5;
             //tests whether or not there is already a boat placed in this location
             for(int l = 0; l < k; l++)
             {
-                if(ylocation[k] == ylocation[l] && xlocation[k]==xlocation[l])
+                if(ycomputer[k] == ycomputer[l] && xcomputer[k] == xcomputer[l])
                     repeat = 1;
             }
         }while(repeat == 1);
-        compBoard[xlocation[k]][ylocation[k]]=occupied;
+        compBoard[xcomputer[k]][ycomputer[k]] = occupied;
     }
-    
-    printBoard(board);
-    
+    printBoard(compBoard);
 }
+
+//void makeGuess()
+//{
+//    
+//}

@@ -20,7 +20,4 @@ void Player::createBoard(int array[5][5])
     }
 }
 
-void Player:: makeGuess()
-{
-    cout << "Make a guess: ";
-}
+

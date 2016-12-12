@@ -17,8 +17,12 @@ class Computer: public Player
 {
 public:
     Computer();
-    void printBoard(int array[5][5]);
-    void placeShips(int array[5][5]);
+    void printBoard(int array1[5][5]);
+    void placeShips(int array1[5][5]);
+//    void makeGuess();
+    
+private:
+    
 };
 
 #endif /* Computer_hpp */

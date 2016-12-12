@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2299914B1DDBADDC00010D92 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2299914A1DDBADDC00010D92 /* main.cpp */; };
-		32A6E2081DDBB81F00F3D08B /* Ships.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32A6E2061DDBB81F00F3D08B /* Ships.cpp */; };
 		32B864621DFE398900BAD3A2 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32B864601DFE398900BAD3A2 /* Player.cpp */; };
 		32B864651DFE398F00BAD3A2 /* Human.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32B864631DFE398F00BAD3A2 /* Human.cpp */; };
 		32B864681DFE399400BAD3A2 /* Computer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 32B864661DFE399400BAD3A2 /* Computer.cpp */; };
@@ -29,8 +28,6 @@
 /* Begin PBXFileReference section */
 		229991471DDBADDC00010D92 /* CS172-Final Project */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "CS172-Final Project"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2299914A1DDBADDC00010D92 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		32A6E2061DDBB81F00F3D08B /* Ships.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ships.cpp; sourceTree = "<group>"; };
-		32A6E2071DDBB81F00F3D08B /* Ships.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Ships.hpp; sourceTree = "<group>"; };
 		32B864601DFE398900BAD3A2 /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		32B864611DFE398900BAD3A2 /* Player.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
 		32B864631DFE398F00BAD3A2 /* Human.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Human.cpp; sourceTree = "<group>"; };
@@ -76,8 +73,6 @@
 				32B864641DFE398F00BAD3A2 /* Human.hpp */,
 				32B864661DFE399400BAD3A2 /* Computer.cpp */,
 				32B864671DFE399400BAD3A2 /* Computer.hpp */,
-				32A6E2061DDBB81F00F3D08B /* Ships.cpp */,
-				32A6E2071DDBB81F00F3D08B /* Ships.hpp */,
 			);
 			path = "CS172-Final Project";
 			sourceTree = "<group>";
@@ -141,7 +136,6 @@
 			files = (
 				32B864681DFE399400BAD3A2 /* Computer.cpp in Sources */,
 				2299914B1DDBADDC00010D92 /* main.cpp in Sources */,
-				32A6E2081DDBB81F00F3D08B /* Ships.cpp in Sources */,
 				32B864621DFE398900BAD3A2 /* Player.cpp in Sources */,
 				32B864651DFE398F00BAD3A2 /* Human.cpp in Sources */,
 			);
