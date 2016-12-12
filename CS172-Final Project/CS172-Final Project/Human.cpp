@@ -47,7 +47,9 @@ void Human::printBoard(int array[5][5])
                 cout << setw(4) << "H |";
         }
         cout << "\n" << "   _____________________" << endl;
-    }}
+    }
+    cout << endl;
+}
 
 void Human::placeShips(int array[5][5])
 {
