@@ -25,7 +25,8 @@ void Computer::printBoard(int array[5][5])
         for(int j = 0; j <= 4; j++)
         {
             
-            if((array[j][a] == occupied) || (array[j][a] == empty))   //space appears blank (could be empty or occupied)
+            if((array[j][a] == occupied) || (array[j][a] == empty))  //space appears blank (could be empty or occupied)
+                cout << setw(4) << " |" ;
             else if(array[j][a] == missed )    //shows your missed shots
                 cout << setw(4) << "M |";
             else if(array[j][a] == hit )       //shows your hits
