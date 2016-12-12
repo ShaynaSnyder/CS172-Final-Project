@@ -9,6 +9,7 @@
 #include "Human.hpp"
 #include <iomanip>
 #include "Player.hpp"
+#include "Computer.hpp"
 using namespace std;
 
 Human::Human(string name)
@@ -53,7 +54,7 @@ void Human::printBoard(int array[5][5])
 void Human::placeShips(int array[5][5])
 {
     //prompts user to place their ships using for loop
-    for(int i=0; i<=4; i++)
+    for(int i = 0; i <= 4; i++)
     {
         do
         {
@@ -87,13 +88,33 @@ void Human::placeShips(int array[5][5])
                 }
             }
             // If location is not between 1 and 5, repeat variable is set equal to 1
-            if(!(ylocation[i]>=0 && ylocation[i]<=4 && xlocation[i]>=1 && xlocation[i]<=5))
+            if(!(ylocation[i] >= 0 && ylocation[i] <= 4 && xlocation[i] >= 1 && xlocation[i] <= 5))
                 repeat = 1;
             if(repeat == 1)
                 cout << "This is not a valid input.\n";
         }while(repeat == 1);
-        board[xlocation[i]-1][ylocation[i]]=occupied;
+        board[xlocation[i] - 1][ylocation[i]] = occupied;
     }
     printBoard(board);
-    
 }
+
+void Human::makeGuess()
+{
+    cout << "Make your guess: ";
+    int x;
+    char y;
+    cin >> x >> y;
+    for (int i = 0; i <= 4; i++)
+    {
+        if (x == xcomputer[i] && y == ycomputer[i])
+        {
+            cout << "You hit a ship";
+            // Space = 'H';
+        }
+        else
+            cout << "You missed";
+            // Space = 'M';
+            
+    }
+}
+

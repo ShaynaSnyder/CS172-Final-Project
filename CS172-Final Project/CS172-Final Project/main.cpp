@@ -44,6 +44,16 @@ int main()
     
     Computer player2;
     player2.createBoard(compBoard);
+    
+    for (int i = 1; i <= 25; i++)
+    {
+        if (i % 2 != 0)
+            player1.makeGuess();
+        else
+            cout << "WOOO";
+//            player2.makeGuess();
+    }
+
     player2.placeShips(compBoard);
     
     return 0;
