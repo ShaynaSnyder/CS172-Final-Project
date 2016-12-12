@@ -14,22 +14,18 @@
 using namespace std;
 class Ships
 {
+private:
+    int shipN, size, x, y;
+    string name;
+    int refBoard[5][5];
+
 public:
     Ships();
-    void hit();
+    Ships(int shipN);
+    string getName(int shipN);
+    void hit(int refBoard[5][5], int x, int y);
     void miss();
     void sunkenShips(string name);
-    
-    // We should have getHit and getMiss I think
-    // Or maybe make them bools?
-    
-    // Yeah I don't know what these do...
-    
-    
-private:
-    int size;
-    string name;
-    
 };
 
 // Template to check guesses

@@ -7,6 +7,7 @@
 #include <string>
 #include <iomanip>
 #include <cstdlib>
+#include "Ships.hpp"
 
 using namespace std;
 
@@ -25,21 +26,34 @@ int main()
 {
     //to decrease variation, all ships will be modeled as having a size of 1 unit
     //declares string array to hold ship names
-    string shipNames[5] = {"Patrol Boat", "Destroyer", "Submarine", "Battleship", "Carrier"};
+    Ships ships[5];
     //declares int arrays to hold ship locations
     int xlocation[5], ylocation[5], xcomputer[5], ycomputer[5], board[5][5], compBoard[5][5], repeat=0;
     char letterlocation[5];
-    cout << "\nBackground information and rules.\n";
+    cout << endl << "                       Welcome to\n";
+    cout << "____   ___  _____  _____         ____   ____             ___" << endl;
+    cout << "|___) |___|   |      |    |     |___   (___   |___|  |  |___)" << endl;
+    cout << "|___) |   |   |      |    |___  |____  ____)  |   |  |  |" << endl;
+    cout << "                 ____           ____           ____" << endl;
+    cout << "                |    |         |    |         |    |" << endl;
+    cout << "                |    |         |    |         |    |" << endl;
+    cout << "    ____________|    |_________|    |_________|    |____" << endl;
+    cout << "   |              __             __             __     |" << endl;
+    cout << "   |             |__|           |__|           |__|    |" << endl;
+    cout << "   |                                                   |" << endl;
+    cout << "≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈" << endl;
+    cout << "\nThe rules of the game are simple. Sink your opponent's ships before they sink yours.\nBoth you and your opponent (the computer) have 5 ships: patrol boat, destroyer, submarine, battleship, and carrier.\nYou and your opponent will alternate guessing where the other player's ships are located.\nIf you guess one of their ships correctly, the ship is sunk. If you guess incorrectly, it will be marked as a miss.\nOnce a player has hit all of their opponent's ships, they win the game!\n";
+    cout << "LET'S PLAY!\nThis is your board. It is empty right now. Place your ships on the board.\n";
     playerBoard(board); //calls void function that creates the player's board
     printPlayerBoard(board); //calls void function that outputs the player's board
-    
+
     //prompts user to place their ships using for loop
     for(int i=0; i<=4; i++)
     {
         do
         {
         repeat=0;
-        cout << "\nPlace your " << shipNames[i] << ".\nHorizontal location (1-5): ";
+        cout << "\nPlace your " << ships[i].getName(i) << ".\nHorizontal location (1-5): ";
         cin >> xlocation[i];
         cout << "Vertical location (a, b, c, d, or e): ";
         cin >> letterlocation[i];
@@ -144,7 +158,10 @@ void printPlayerBoard(int array2[5][5])
             else if(array2[j][a] == missed )    //shows if computer misses your ship
                 cout << setw(4) << "M |";
             else if(array2[j][a] == hit )       //shows if computer hits your ship
+            {
                 cout << setw(4) << "H |";
+                //ships[i].hit(array2[5][5], j, a);
+            }
         }
         cout << "\n" << "   _____________________" << endl;
     }
