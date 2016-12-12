@@ -16,7 +16,6 @@ using namespace std;
 class Computer: public Player
 {
 public:
-    Computer();
     void printBoard(int array[5][5]);
     void placeShips(int array[5][5]);
 };

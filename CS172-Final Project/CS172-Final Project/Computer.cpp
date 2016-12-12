@@ -7,13 +7,9 @@
 //
 
 #include "Computer.hpp"
+#include "Player.hpp"
 #include <iomanip>
 using namespace std;
-
-Computer::Computer()
-{
-    
-}
 
 void Computer::printBoard(int array[5][5])
 {
@@ -29,11 +25,7 @@ void Computer::printBoard(int array[5][5])
         for(int j = 0; j <= 4; j++)
         {
             
-            //if((array[j][a] == occupied) || (array[j][a] == empty))   //space appears blank (could be empty or occupied)
-            if(array[j][a] ==empty)
-                cout << setw(4) << " |" ;
-            else if(array[j][a] ==occupied)
-                cout << setw(4) << "  X";
+            if((array[j][a] == occupied) || (array[j][a] == empty))   //space appears blank (could be empty or occupied)
             else if(array[j][a] == missed )    //shows your missed shots
                 cout << setw(4) << "M |";
             else if(array[j][a] == hit )       //shows your hits
@@ -56,13 +48,13 @@ void Computer::placeShips(int array[5][5])
             //tests whether or not there is already a boat placed in this location
             for(int l = 0; l < k; l++)
             {
-                if(ylocation[k] == ylocation[l] && xlocation[k]==xlocation[l])
+                if(ycomputer[k] == ycomputer[l] && xcomputer[k]==xcomputer[l])
                     repeat = 1;
             }
         }while(repeat == 1);
-        compBoard[xlocation[k]][ylocation[k]]=occupied;
+        compBoard[xcomputer[k]][ycomputer[k]]=occupied;
     }
     
-    printBoard(board);
+    printBoard(compBoard);
     
 }
