@@ -23,7 +23,10 @@ public:
     string getName(string);
     void printBoard(int array[5][5]);
     void placeShips(int array[5][5]);
+<<<<<<< HEAD
     void makeGuessC(int array[5][5]);
+=======
+>>>>>>> 4826c401910dbbfa804ac5441494c68132daaba0
     
     
 };
