@@ -59,8 +59,3 @@ void Computer::placeShips(int array1[5][5])
     printBoard(compBoard);
 
 }
-
-//void makeGuess()
-//{
-//    
-//}

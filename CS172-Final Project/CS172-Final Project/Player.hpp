@@ -27,10 +27,6 @@ public:
     string shipNames[5] = {"Patrol Boat", "Destroyer", "Submarine", "Battleship", "Carrier"};
 private:
     int num;
-    
-    
-    
-    
 };
 
 #endif /* Player_hpp */

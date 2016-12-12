@@ -46,7 +46,7 @@ int main()
     player2.createBoard(compBoard);
     player2.placeShips(compBoard);
     
-    for (int i = 1; i <= 500; i++)
+    for (int i = 1; i <= 50; i++)
     {
         if (i % 2 != 0)
             player1.makeGuess();
