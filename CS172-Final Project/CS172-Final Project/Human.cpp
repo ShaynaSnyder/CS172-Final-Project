@@ -101,20 +101,19 @@ void Human::placeShips(int array[5][5])
 void Human::makeGuess()
 {
     cout << "Make your guess: ";
-    int x;
+    int x, sunk=0;
     char y;
     cin >> x >> y;
     for (int i = 0; i <= 4; i++)
     {
         if (x == xcomputer[i] && y == ycomputer[i])
         {
-            cout << "You hit a ship";
+            sunk = 1;
+            cout << "You sunk your oppenent's (name of ship)!\n";
             // Space = 'H';
         }
-        else
-            cout << "You missed";
-            // Space = 'M';
-            
     }
+    if(sunk==0)
+        cout << "You missed!\n";
 }
 
