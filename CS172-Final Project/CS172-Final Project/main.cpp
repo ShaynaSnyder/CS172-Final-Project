@@ -18,7 +18,7 @@ int main()
     //declares string variable for name
     string name;
     //declares 2 two-dimensional int arrays to store computer and human boards
-    int humanBoard[5][5], compBoard[5][5], sunkCompShips, sunkPlayerShips;
+    int humanBoard[5][5], compBoard[5][5], sunkCompShips=0, sunkPlayerShips=0, xGuess[25] = {}, yGuess[25] = {};
     //creates Human object player1
     Human player1(name);
     //creates Computer object player2
@@ -54,25 +54,27 @@ int main()
     // Each player takes turns guessing
     do
     {
-        player2.checkPlayerGuesses();          // Function call to check player guesses
 
-        player1.checkCompGuesses();                               // Function call to check computer guesses
-        sunkCompShips = player2.getSunkCompShips();
-        
-        if (player2.getSunkCompShips() == 5)
+        for(int g=0; g<25; g++)
         {
-            cout << "You won!!!!!!" << endl;
-            return 0;
-        }
-        sunkPlayerShips = player1.getSunkPlayerShips();
-        if (player1.getSunkPlayerShips() == 5)
-        {
-            cout << "The computer won. :(" << endl;
-            return 0;
-        }
-        
-        
-    }while (sunkCompShips <= 5 && sunkPlayerShips != 5);
+            player2.checkPlayerGuesses(xGuess, yGuess);          // Function call to check player guesses
+            player1.checkCompGuesses();            // Function call to check computer guesses
+            xGuess[g] = player2.getxGuess();
+            yGuess[g] = player2.getyGuess();
+            sunkCompShips = player2.getSunkCompShips();
+            if (player2.getSunkCompShips() == 5)
+            {
+                cout << "You won!!!!!!" << endl;
+                return 0;
+            }
+            sunkPlayerShips = player1.getSunkPlayerShips();
+            if (player1.getSunkPlayerShips() == 5)
+            {
+                cout << "The computer won. :(" << endl;
+                return 0;
+            }
+            }
+    }while (sunkCompShips < 5 && sunkPlayerShips < 5);
     return 0;
 }
 
