@@ -12,7 +12,7 @@ using namespace std;
 class Computer: public Player
 {
 private:
-    int  x, y, xcomputer[5], ycomputer[5], sunkCompShips = 0;
+    int  compBoard[5][5], x, y, xcomputer[5], ycomputer[5], sunkCompShips = 0;
 public:
     void printBoard(int array[5][5]);
     void placeShips(int array[5][5]);

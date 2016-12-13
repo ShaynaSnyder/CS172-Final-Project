@@ -26,7 +26,7 @@ void Computer::printBoard(int array[5][5])
             else if(array[j][a] == missed )    //shows your missed shots
                 cout << setw(4) << "M |";
             else if(array[j][a] == hit )       //shows your hits
-                cout << setw(4) << "H |";
+                cout << setw(4) << "X |";
         }
         cout << "\n" << "   _____________________" << endl;
     }
@@ -61,7 +61,7 @@ void Computer::placeShips(int array1[5][5])
 void Computer::checkPlayerGuesses(int xGuess[25], int yGuess[25])
 {
     char a;
-    int hit=0, repeat;
+    int hits=0, repeat;
     do
     {
         repeat = 0;
@@ -111,13 +111,17 @@ void Computer::checkPlayerGuesses(int xGuess[25], int yGuess[25])
         if (x == xcomputer[i] && y == ycomputer[i])
         {
             cout << "You sunk the computer's (name of ship)!\n\n";
+            compBoard[x][y] = hit;
             sunkCompShips++;
-            hit++;
+            hits++;
         }
     }
-    if(hit==0)
+    if(hits==0)
+    {
         cout << "You missed!\n\n";
-    
+        compBoard[x][y] = missed;
+    }
+    printBoard(compBoard);
 }
 
 int Computer::getSunkCompShips()

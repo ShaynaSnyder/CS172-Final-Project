@@ -34,13 +34,13 @@ void Human::printBoard(int array[5][5])
         {
             
             if(array[j][a] == occupied)        //shows that your ship is occupying this space
-                cout << setw(4) << "X |";
+                cout << setw(4) << "O |";
             if(array[j][a] == empty)           //leaves this space empty
                 cout << setw(4) << " |" ;
             else if(array[j][a] == missed )    //shows if computer misses your ship
                 cout << setw(4) << "M |";
             else if(array[j][a] == hit )       //shows if computer hits your ship
-                cout << setw(4) << "H |";
+                cout << setw(4) << "X |";
         }
         cout << "\n" << "   _____________________" << endl;
     }
@@ -97,7 +97,7 @@ void Human::placeShips(int array[5][5])
 //defines void function to check computer's guessses
 void Human::checkCompGuesses()
 {
-    int x, y, hit=0;
+    int x, y, hits=0;
     cout << "It is the computer's turn to guess." << endl;
     //uses random number generators to randomly generate a guess for the computer
     x = rand() % 5;
@@ -108,13 +108,17 @@ void Human::checkCompGuesses()
         if (x == xhuman[i] && y == yhuman[i])
         {
             cout << "The computer sunk your (name of ship)!\n\n";
+            humanBoard[x][y] = hit;
             sunkPlayerShips++;
-            hit++;
+            hits++;
         }
     }
-    if(hit==0)
+    if(hits==0)
+    {
         cout << "The computer missed!\n\n";
-    
+        humanBoard[x][y] = missed;
+    }
+    printBoard(humanBoard);
 }
 
 int Human::getSunkPlayerShips()
