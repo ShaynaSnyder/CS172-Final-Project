@@ -58,9 +58,9 @@ void Human::placeShips(int array[5][5])
             int temp;
             repeat=0;
             cout << "Place your " << shipNames[i] << ": ";
-            cin >> temp >> letterLocation[i];
+            cin >> temp >> letterlocation[i];
             xhuman[i] = temp - 1;
-            switch (letterLocation[i])
+            switch (letterlocation[i])
             {
                 case 'a':
                     yhuman[i] = 0;
@@ -142,17 +142,19 @@ void Human::checkCompGuesses(int xGuessC[25], int yGuessC[25])
     printBoard(humanBoard);                     // Prints player board
 }
 
+
 // Returns number of player ships sunk
+
 int Human::getSunkPlayerShips()
 {
     return sunkPlayerShips;
 }
-
+//defines int function to get value of x
 int Human::getxGuessC()
 {
     return x;
 }
-
+//defines int function to get value of y
 int Human::getyGuessC()
 {
     return y;

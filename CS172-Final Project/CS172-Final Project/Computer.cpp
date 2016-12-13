@@ -123,17 +123,17 @@ void Computer::checkPlayerGuesses(int xGuessH[25], int yGuessH[25])
     }
     printBoard(compBoard);
 }
-
+//defines int function to get value of sunkCompShips
 int Computer::getSunkCompShips()
 {
     return sunkCompShips;
 }
-
+//defines int function to get value of x
 int Computer::getxGuessH()
 {
     return x;
 }
-
+//defines int function to get value of y
 int Computer::getyGuessH()
 {
     return y;

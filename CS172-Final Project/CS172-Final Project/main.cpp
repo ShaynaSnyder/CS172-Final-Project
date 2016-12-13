@@ -65,16 +65,18 @@ int main()
     do
     {
 
+        //uses for loop to store computer and player guesses in arrays
         for(int g = 0; g < 25; g++)
         {
 
             player2.checkPlayerGuesses(xGuessH, yGuessH);          // Function call to check player guesses
             player1.checkCompGuesses(xGuessC, yGuessC);            // Function call to check computer guesses
+            //uses int function calls to get functions to get values for arrays of guesses
             xGuessH[g] = player2.getxGuessH();
             yGuessH[g] = player2.getyGuessH();
             xGuessC[g] = player1.getxGuessC();
             yGuessC[g] = player1.getyGuessC();
-
+            //uses get function to retrieve the value of sunken computer ships
             sunkCompShips = player2.getSunkCompShips();
             // If all of computer's ships are sunk, game is over, program ends. If not game keeps going.
             if (player2.getSunkCompShips() == 5)
@@ -82,6 +84,7 @@ int main()
                 cout << "Congratulations! You beat the computer!" << endl;
                 return 0;
             }
+            //uses get function to retrieve the value of sunken player ships
             sunkPlayerShips = player1.getSunkPlayerShips();
             // If all of player's ships are sunk, game is over, program ends. If not game keeps going.
             if (player1.getSunkPlayerShips() == 5)
@@ -90,7 +93,7 @@ int main()
                 return 0;
             }
             }
-    }while (sunkCompShips < 5 && sunkPlayerShips < 5);
+    }while (sunkCompShips < 5 && sunkPlayerShips < 5);  //do-while loop iterates while neither player has sunk all 5 of their opponent's ships
     return 0;
 }
 
