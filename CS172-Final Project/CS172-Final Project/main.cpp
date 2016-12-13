@@ -55,9 +55,14 @@ int main()
     do
     {
         player2.checkPlayerGuesses();          // Function call to check player guesses
-        player1.checkCompGuesses();                               // Function call to check computer guesses
         sunkCompShips = player2.getSunkCompShips();
-        sunkPlayerShips = player1.getSunkPlayerShips();
+        if (player2.getSunkCompShips() == 5)
+        {
+            cout << "You won!!!!!!" << endl;
+        }
+        //checkCompGuesses(humanBoard);                               // Function call to check computer guesses
+        
+
         
     }while (sunkCompShips <= 5 && sunkPlayerShips != 5);
     return 0;

@@ -57,10 +57,15 @@ void Computer::placeShips(int array1[5][5])
 }
 
 //defines void function to check human's guesses
+
 void Computer::checkPlayerGuesses()
 {
     char a;
+<<<<<<< HEAD
+    int x, y = 5, hit = 0;
+=======
     int x, y, hit=0;
+>>>>>>> 88f6d5d10eec6e54c515aa7b4762416831f348e5
     x=x-1;
     //prompts human guess and reads it in
     cout << "Make your guess: ";
