@@ -61,11 +61,13 @@ int main()
         if (player2.getSunkCompShips() == 5)
         {
             cout << "You won!!!!!!" << endl;
+            return 0;
         }
         sunkPlayerShips = player1.getSunkPlayerShips();
         if (player1.getSunkPlayerShips() == 5)
         {
             cout << "The computer won. :(" << endl;
+            return 0;
         }
         
     }while (sunkCompShips <= 5 && sunkPlayerShips != 5);
