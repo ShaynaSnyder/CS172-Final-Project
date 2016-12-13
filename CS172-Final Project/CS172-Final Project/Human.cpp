@@ -133,17 +133,17 @@ void Human::checkCompGuesses(int xGuessC[25], int yGuessC[25])
     }
     printBoard(humanBoard);
 }
-
+//defines int function to get value of sunkPlayerShips
 int Human::getSunkPlayerShips()
 {
     return sunkPlayerShips;
 }
-
+//defines int function to get value of x
 int Human::getxGuessC()
 {
     return x;
 }
-
+//defines int function to get value of y
 int Human::getyGuessC()
 {
     return y;
