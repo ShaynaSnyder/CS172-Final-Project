@@ -61,7 +61,7 @@ void Computer::placeShips(int array1[5][5])
 void Computer::checkPlayerGuesses(int xGuessH[25], int yGuessH[25])
 {
     char a;
-    int hits=0, repeat;
+    int hits = 0, repeat;
     do
     {
         repeat = 0;
@@ -90,7 +90,7 @@ void Computer::checkPlayerGuesses(int xGuessH[25], int yGuessH[25])
                 y = 5;
                 break;
         }
-        if(y==5)
+        if(y == 5)
         {
             cout << "Invalid guess.\n\n";
                 repeat++;
@@ -110,13 +110,13 @@ void Computer::checkPlayerGuesses(int xGuessH[25], int yGuessH[25])
     {
         if (x == xcomputer[i] && y == ycomputer[i])
         {
-            cout << "You sunk the computer's (name of ship)!\n\n";
+            cout << "You sunk the computer's " << shipNames[i] << "!\n\n";
             compBoard[x][y] = hit;
             sunkCompShips++;
             hits++;
         }
     }
-    if(hits==0)
+    if(hits == 0)
     {
         cout << "You missed!\n\n";
         compBoard[x][y] = missed;

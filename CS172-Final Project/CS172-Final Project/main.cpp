@@ -55,7 +55,7 @@ int main()
     do
     {
 
-        for(int g=0; g<25; g++)
+        for(int g = 0; g < 25; g++)
         {
             player2.checkPlayerGuesses(xGuessH, yGuessH);          // Function call to check player guesses
             player1.checkCompGuesses(xGuessC, yGuessC);                          // Function call to check computer guesses
@@ -66,13 +66,13 @@ int main()
             sunkCompShips = player2.getSunkCompShips();
             if (player2.getSunkCompShips() == 5)
             {
-                cout << "You won!!!!!!" << endl;
+                cout << "Congratulations! You beat the computer!" << endl;
                 return 0;
             }
             sunkPlayerShips = player1.getSunkPlayerShips();
             if (player1.getSunkPlayerShips() == 5)
             {
-                cout << "The computer won. :(" << endl;
+                cout << "Oh no! You lost. The computer sunk all of your ships." << endl;
                 return 0;
             }
             }

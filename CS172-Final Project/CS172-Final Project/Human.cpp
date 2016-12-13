@@ -120,13 +120,13 @@ void Human::checkCompGuesses(int xGuessC[25], int yGuessC[25])
     {
         if (x == xhuman[i] && y == yhuman[i])
         {
-            cout << "The computer sunk your (name of ship)!\n\n";
+            cout << "The computer sunk your " << shipNames[i] << "!\n\n";
             humanBoard[x][y] = hit;
             sunkPlayerShips++;
             hits++;
         }
     }
-    if(hits==0)
+    if(hits == 0)
     {
         cout << "The computer missed!\n\n";
         humanBoard[x][y] = missed;
