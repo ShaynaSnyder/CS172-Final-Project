@@ -55,9 +55,11 @@ void Human::placeShips(int array[5][5])
     {
         do
         {
+            int temp;
             repeat=0;
             cout << "Place your " << shipNames[i] << ": ";
-            cin >> xhuman[i] >> letterlocation[i];
+            cin >> temp >> letterlocation[i];
+            xhuman[i] = temp - 1;
             switch (letterlocation[i])
             {
                 case 'a':
@@ -85,26 +87,39 @@ void Human::placeShips(int array[5][5])
                 }
             }
             // If location is not between 1 and 5, repeat variable is set equal to 1
-            if(!(yhuman[i] >= 0 && yhuman[i] <= 4 && xhuman[i] >= 1 && xhuman[i] <= 5))
+            if(!(yhuman[i] >= 0 && yhuman[i] <= 4 && xhuman[i] >= 0 && xhuman[i] <= 4))
                 repeat = 1;
             if(repeat == 1)
                 cout << "This is not a valid input.\n";
         }while(repeat == 1);
-        humanBoard[xhuman[i] - 1][yhuman[i]] = occupied;
+        humanBoard[xhuman[i]][yhuman[i]] = occupied;
     }
-    printBoard(humanBoard);                     // Prints player board
+
+    cout << "\nThese are you ships.\n";
+    printBoard(humanBoard);
+
 }
 
-//defines void function to check computer's guessses
-void Human::checkCompGuesses()
+//defines void function to check computer's guesses
+void Human::checkCompGuesses(int xGuessC[25], int yGuessC[25])
 {
-    int x, y, hits=0;
-    cout << "It is the computer's turn to guess." << endl;
-    
-    //uses random number generators to randomly generate a guess for the computer
-    x = rand() % 5;
-    y = rand() % 5;
-    
+
+    int hits=0, repeat;
+    cout << "It's the computer's turn to guess.\n";
+    do
+    {
+        repeat = 0;
+        //uses random number generators to randomly generate a guess for the computer
+        x = rand() % 5;
+        y = rand() % 5;
+        //tests whether or not the computer has already guessed this location
+        for(int a = 0; a < 25; a++)
+        {
+            if(y == yGuessC[a] && x == xGuessC[a])
+                repeat++;
+        }
+    }while(repeat!=0);
+
     //uses for loop and if statement to determine if the guess is a hit or a miss
     for(int i = 0; i <= 4; i++)
     {
@@ -131,4 +146,14 @@ void Human::checkCompGuesses()
 int Human::getSunkPlayerShips()
 {
     return sunkPlayerShips;
+}
+
+int Human::getxGuessC()
+{
+    return x;
+}
+
+int Human::getyGuessC()
+{
+    return y;
 }

@@ -9,7 +9,7 @@ using namespace std;
 
 void Computer::printBoard(int array[5][5])
 {
-    cout << "   Your Opponent's Board\n  ";
+    cout << "     Opponent's Board\n  ";
     for(int i = 1; i <= 5; i++)                     //outputs column names
     { //number coordinates
         cout << setw(4) << i;
@@ -58,7 +58,7 @@ void Computer::placeShips(int array1[5][5])
 
 //defines void function to check human's guesses
 
-void Computer::checkPlayerGuesses(int xGuess[25], int yGuess[25])
+void Computer::checkPlayerGuesses(int xGuessH[25], int yGuessH[25])
 {
     char a;
     int hits = 0, repeat;
@@ -98,7 +98,7 @@ void Computer::checkPlayerGuesses(int xGuess[25], int yGuess[25])
         //tests whether or not the user has already guessed this location
         for(int j = 0; j < 25; j++)
         {
-            if(y == yGuess[j] && x == xGuess[j])
+            if(y == yGuessH[j] && x == xGuessH[j])
             {
                 cout << "You have already guessed this location.\n\n";
                 repeat++;
@@ -129,12 +129,12 @@ int Computer::getSunkCompShips()
     return sunkCompShips;
 }
 
-int Computer::getxGuess()
+int Computer::getxGuessH()
 {
     return x;
 }
 
-int Computer::getyGuess()
+int Computer::getyGuessH()
 {
     return y;
 }

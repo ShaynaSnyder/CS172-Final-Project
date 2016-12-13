@@ -14,14 +14,18 @@ using namespace std;
 class Human: public Player
 {
 private:
-    int xhuman[5], yhuman[5], sunkPlayerShips=0;
+    int humanBoard[5][5], x, y, xhuman[5], yhuman[5], sunkPlayerShips=0;
 public:
     Human(string);
     string getName(string);
-    void printBoard(int array[5][5]);               // Prints board
-    void placeShips(int array[5][5]);               // Places ships
-    void checkCompGuesses();                        // Checks computer guesses on player board
-    int getSunkPlayerShips();                       // Returns number of player ships sunk
+
+    void printBoard(int array[5][5]);
+    void placeShips(int array[5][5]);
+    void checkCompGuesses(int xGuessC[25], int yGuessC[25]);
+    int getSunkPlayerShips();
+    int getxGuessC();
+    int getyGuessC();
+
 };
 
 
