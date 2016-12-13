@@ -11,8 +11,6 @@
 #include "Computer.hpp"
 #include "Player.hpp"
 
-//bool gameOver;    //is this ever used?
-
 using namespace std;
 
 int main()
