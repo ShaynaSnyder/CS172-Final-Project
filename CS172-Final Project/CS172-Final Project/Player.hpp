@@ -8,7 +8,10 @@
 #include <stdio.h>
 #include <iostream>
 #include <string>
+
 using namespace std;
+
+//creates Player class
 class Player
 {
 public:
@@ -17,7 +20,7 @@ public:
     const int occupied = 1;  // contains a ship
     const int missed   = 2;  // missed
     const int hit      = 3;  // hit
-    int xhuman[5], yhuman[5], xcomputer[5], ycomputer[5], board[5][5], compBoard[5][5], repeat=0, x, y;
+    int xhuman[5], yhuman[5], xcomputer[5], ycomputer[5], humanBoard[5][5], compBoard[5][5], repeat=0, x, y;
     char letterlocation[5];
     
     

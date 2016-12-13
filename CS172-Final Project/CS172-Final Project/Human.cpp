@@ -89,8 +89,8 @@ void Human::placeShips(int array[5][5])
             if(repeat == 1)
                 cout << "This is not a valid input.\n";
         }while(repeat == 1);
-        board[xhuman[i] - 1][yhuman[i]] = occupied;
+        humanBoard[xhuman[i] - 1][yhuman[i]] = occupied;
     }
-    printBoard(board);
+    printBoard(humanBoard);
 }
 
