@@ -40,6 +40,7 @@ int main()
     cout << "      \\                                               /" << endl;
     cout << "≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈≈" << endl;
     cout << "\nThe rules of the game are simple--sink your opponent's ships before they sink yours.\n\nBoth you and your opponent (the computer) have 5 ships:\n   patrol boat, destroyer, submarine, battleship, and carrier.\n\nYou and your opponent will alternate guessing where the other player's ships are located.\nIf you guess one of their ships correctly, the ship is sunk. If you guess incorrectly, it will be marked as a miss.\n\nOnce a player has hit all of their opponent's ships, \bthey win the game!\b So, let's get started!\n\n   Enter your name: ";
+    
     //getline reads in player's name
     getline(cin, name);
     cout << "\n   LET'S PLAY " << player1.getName(name) << "!\nThis is your board. It is empty right now. Place your ships on the board.\nTo place ships on the board or make a guess, enter coordinates using a number (1-5) and a letter (a-e)\nExamples: 1d, 3a, 5b, etc.\n";
@@ -54,11 +55,9 @@ int main()
     // Each player takes turns guessing
     do
     {
-
         //uses for loop to store computer and player guesses in arrays
         for(int g = 0; g < 25; g++)
         {
-
             player2.checkPlayerGuesses(xGuessH, yGuessH);          // Function call to check player guesses
             player1.checkCompGuesses(xGuessC, yGuessC);            // Function call to check computer guesses
             //uses int function calls to get functions to get values for arrays of guesses

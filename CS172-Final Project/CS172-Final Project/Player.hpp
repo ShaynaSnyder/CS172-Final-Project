@@ -28,5 +28,4 @@ public:
     //declares string array of ship names to store the names of each ship
     string shipNames[5] = {"Patrol Boat", "Destroyer", "Submarine", "Battleship", "Carrier"};
 };
-
 #endif /* Player_hpp */

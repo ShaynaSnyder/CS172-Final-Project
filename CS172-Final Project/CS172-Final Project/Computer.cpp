@@ -7,8 +7,10 @@
 #include <iomanip>
 using namespace std;
 
+//defines void function to print the computer's game board
 void Computer::printBoard(int array[5][5])
 {
+    //uses for loops to set up rows and columns of game board
     cout << "     Opponent's Board\n  ";
     for(int i = 1; i <= 5; i++)                     //outputs column names
     { //number coordinates
@@ -32,7 +34,7 @@ void Computer::printBoard(int array[5][5])
     }
     cout << endl;
 }
-
+//defines void function to place the computer's ships
 void Computer::placeShips(int array1[5][5])
 {
     //places computer's ships using for loop and random number generators
@@ -40,24 +42,27 @@ void Computer::placeShips(int array1[5][5])
     {
         do
         {
+            //sets repeat equal to 0 at the beginning of each do-while loop iteration
             repeat=0;
+            //uses random number generators to generate coordinates for computer ship locations
             xcomputer[k] = rand() % 5;
             ycomputer[k] = rand() % 5;
             //tests whether or not there is already a boat placed in this location
             for(int l = 0; l < k; l++)
             {
+                //if ship location is equal to previous ship location, repeat is set equal to 1
                 if(ycomputer[k] == ycomputer[l] && xcomputer[k] == xcomputer[l])
                     repeat = 1;
             }
-        }while(repeat == 1);
+        }while(repeat == 1); //do-while loop iterates again while repeat is equal to 1
+        //randomly generated ship location is set equal to occupied in compBoard array
         compBoard[xcomputer[k]][ycomputer[k]] = occupied;
     }
+    //calls function to print the computer board to the screen
     printBoard(compBoard);
 
 }
-
 //defines void function to check human's guesses
-
 void Computer::checkPlayerGuesses(int xGuessH[25], int yGuessH[25])
 {
     char a;
