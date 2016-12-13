@@ -59,7 +59,7 @@ int main()
         {
 
             player2.checkPlayerGuesses(xGuessH, yGuessH);          // Function call to check player guesses
-            player1.checkCompGuesses(xGuessC, yGuessC);                          // Function call to check computer guesses
+            player1.checkCompGuesses(xGuessC, yGuessC);            // Function call to check computer guesses
             xGuessH[g] = player2.getxGuessH();
             yGuessH[g] = player2.getyGuessH();
             xGuessC[g] = player1.getxGuessC();
