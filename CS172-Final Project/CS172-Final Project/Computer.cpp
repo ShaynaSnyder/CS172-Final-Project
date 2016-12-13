@@ -117,6 +117,7 @@ void Computer::checkPlayerGuesses(int xGuess[25], int yGuess[25])
     }
     if(hit==0)
         cout << "You missed!\n\n";
+    
 }
 
 int Computer::getSunkCompShips()

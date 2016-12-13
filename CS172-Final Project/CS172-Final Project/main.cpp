@@ -54,6 +54,7 @@ int main()
     // Each player takes turns guessing
     do
     {
+
         for(int g=0; g<25; g++)
         {
             player2.checkPlayerGuesses(xGuess, yGuess);          // Function call to check player guesses
