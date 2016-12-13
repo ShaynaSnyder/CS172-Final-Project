@@ -58,9 +58,9 @@ void Human::placeShips(int array[5][5])
             int temp;
             repeat=0;
             cout << "Place your " << shipNames[i] << ": ";
-            cin >> temp >> letterlocation[i];
+            cin >> temp >> letterLocation[i];
             xhuman[i] = temp - 1;
-            switch (letterlocation[i])
+            switch (letterLocation[i])
             {
                 case 'a':
                     yhuman[i] = 0;

@@ -21,7 +21,7 @@ public:
     const int missed   = 2;  // missed
     const int hit      = 3;  // hit
     int columns, rows, repeat;
-    char letterlocation[5];
+    char letterLocation[5];
     
     
     string shipNames[5] = {"Patrol Boat", "Destroyer", "Submarine", "Battleship", "Carrier"};
