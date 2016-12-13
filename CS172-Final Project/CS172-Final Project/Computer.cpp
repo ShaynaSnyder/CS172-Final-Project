@@ -68,7 +68,7 @@ void Computer::checkPlayerGuesses(int xGuess[25], int yGuess[25])
         //prompts human guess and reads it in
         cout << "Make your guess: ";
         cin >> x >> a;
-        x=x-1;
+        x = x-1;
         switch (a)
         {
             case 'a':

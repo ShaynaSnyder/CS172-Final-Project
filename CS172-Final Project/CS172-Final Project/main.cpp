@@ -18,7 +18,7 @@ int main()
     //declares string variable for name
     string name;
     //declares 2 two-dimensional int arrays to store computer and human boards
-    int humanBoard[5][5], compBoard[5][5], sunkCompShips=0, sunkPlayerShips=0, xGuess[25] = {}, yGuess[25] = {};
+    int humanBoard[5][5], compBoard[5][5], sunkCompShips=0, sunkPlayerShips=0, xGuess[25] = {5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5}, yGuess[25] = {};
     //creates Human object player1
     Human player1(name);
     //creates Computer object player2
