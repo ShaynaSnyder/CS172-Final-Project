@@ -58,37 +58,52 @@ void Computer::placeShips(int array1[5][5])
 
 //defines void function to check human's guesses
 
-void Computer::checkPlayerGuesses()
+void Computer::checkPlayerGuesses(int xGuess[25], int yGuess[25])
 {
     char a;
-    int x, y, hit=0;
-    x=x-1;
-    //prompts human guess and reads it in
-    cout << "Make your guess: ";
-    cin >> x >> a;
-    switch (a)
+    int hit=0, repeat=0;
+    do
     {
-        case 'a':
-            y = 0;
-            break;
-        case 'b':
-            y = 1;
-            break;
-        case 'c':
-            y = 2;
-            break;
-        case 'd':
-            y = 3;
-            break;
-        case 'e':
-            y = 4;
-            break;
-        default:
-            y = 5;
-            break;
-    }
-    if(y==5)
-        cout << "Invalid guess.\n";
+        //prompts human guess and reads it in
+        cout << "Make your guess: ";
+        cin >> x >> a;
+        x=x-1;
+        switch (a)
+        {
+            case 'a':
+                y = 0;
+                break;
+            case 'b':
+                y = 1;
+                break;
+            case 'c':
+                y = 2;
+                break;
+            case 'd':
+                y = 3;
+                break;
+            case 'e':
+                y = 4;
+                break;
+            default:
+                y = 5;
+                break;
+        }
+        if(y==5)
+        {
+            cout << "Invalid guess.\n\n";
+                repeat = 1;
+        }
+        //tests whether or not the user has already guessed this location
+        for(int j = 0; j < 25; j++)
+        {
+            if(y == yGuess[j] && x == xGuess[j])
+            {
+                cout << "You have already guessed this location.\n\n";
+                repeat = 1;
+            }
+        }
+    }while(repeat == 1);
     //uses for loop and if statement to determine if the guess is a hit or a miss
     for(int i = 0; i <= 4; i++)
     {
@@ -106,4 +121,14 @@ void Computer::checkPlayerGuesses()
 int Computer::getSunkCompShips()
 {
     return sunkCompShips;
+}
+
+int Computer::getxGuess()
+{
+    return x;
+}
+
+int Computer::getyGuess()
+{
+    return y;
 }
