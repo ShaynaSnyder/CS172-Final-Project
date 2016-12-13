@@ -11,6 +11,8 @@
 #include <string>
 #include "Player.hpp"
 using namespace std;
+
+//creates Human class that is in the Player class
 class Human: public Player
 {
 private:
