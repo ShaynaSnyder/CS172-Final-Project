@@ -114,6 +114,7 @@ void Human::checkCompGuesses()
     }
     if(hit==0)
         cout << "The computer missed!\n\n";
+    
 }
 
 int Human::getSunkPlayerShips()
