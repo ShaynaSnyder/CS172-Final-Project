@@ -9,17 +9,18 @@
 
 using namespace std;
 
+//defines Human object that sets name equal to name
 Human::Human(string name)
 {
     name = name;
 }
-
+//defines string function to get name of Human
 string Human::getName(string name)
 {
     name = name;
     return name;
 }
-
+//defines void function to print Human board
 void Human::printBoard(int array[5][5])
 {
     cout << "\n        Your Board\n  ";
@@ -47,7 +48,7 @@ void Human::printBoard(int array[5][5])
     }
     cout << endl;
 }
-
+//defines void funtion that places the human's ships on the board
 void Human::placeShips(int array[5][5])
 {
     //prompts user to place their ships using for loop
@@ -55,11 +56,14 @@ void Human::placeShips(int array[5][5])
     {
         do
         {
+            //declares temp int variable to hold a temporary value from user input
             int temp;
+            //sets repeat equal to 0 at the beginning ot each do-while loop iteration
             repeat=0;
             cout << "Place your " << shipNames[i] << ": ";
             cin >> temp >> letterlocation[i];
             xhuman[i] = temp - 1;
+            //uses switch statements to set user-inputted char value equal to integer value
             switch (letterlocation[i])
             {
                 case 'a':
@@ -91,11 +95,13 @@ void Human::placeShips(int array[5][5])
                 repeat = 1;
             if(repeat == 1)
                 cout << "This is not a valid input.\n";
-        }while(repeat == 1);
+        }while(repeat == 1); //do-while loop runs another iteration if repeat is equal to 1
+        //user-inputted location is set equal to occupied in humanBoard array
         humanBoard[xhuman[i]][yhuman[i]] = occupied;
     }
 
     cout << "\nThese are you ships.\n";
+    //calls to printBoard function to print the user's board to the screen
     printBoard(humanBoard);
 
 }
@@ -103,11 +109,12 @@ void Human::placeShips(int array[5][5])
 //defines void function to check computer's guesses
 void Human::checkCompGuesses(int xGuessC[25], int yGuessC[25])
 {
-
+    //initializes int hits to 0
     int hits=0, repeat;
     cout << "It's the computer's turn to guess.\n";
     do
     {
+        //repeat is set equal to 0 at the beginning of each do-while loop iteration
         repeat = 0;
         //uses random number generators to randomly generate a guess for the computer
         x = rand() % 5;
@@ -118,32 +125,33 @@ void Human::checkCompGuesses(int xGuessC[25], int yGuessC[25])
             if(y == yGuessC[a] && x == xGuessC[a])
                 repeat++;
         }
-    }while(repeat!=0);
+    }while(repeat!=0); //while loop iterates again if repeat is not equal to 0
 
     //uses for loop and if statement to determine if the guess is a hit or a miss
     for(int i = 0; i <= 4; i++)
     {
+        //if computer guess is equal to a human ship location
         if (x == xhuman[i] && y == yhuman[i])
         {
-            
             cout << "The computer sunk your " << shipNames[i] << "!\n\n";
+            //guess location is set equal to hit
             humanBoard[x][y] = hit;
+            //sunkPlayerShips and hits are incremented by 1
             sunkPlayerShips++;
             hits++;
         }
     }
-    
+    //if the guess matches none of the ship locations
     if(hits == 0)
     {
         cout << "The computer missed!\n\n";
+        //guess location is set equal to missed
         humanBoard[x][y] = missed;
     }
-    
-    printBoard(humanBoard);                     // Prints player board
+    printBoard(humanBoard);          //calls function to print human board
 }
 
-
-// Returns number of player ships sunk
+//defines int function to get value of sunkPlayerShips
 
 int Human::getSunkPlayerShips()
 {
