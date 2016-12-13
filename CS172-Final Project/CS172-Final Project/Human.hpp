@@ -18,12 +18,14 @@ private:
 public:
     Human(string);
     string getName(string);
+
     void printBoard(int array[5][5]);
     void placeShips(int array[5][5]);
     void checkCompGuesses(int xGuessC[25], int yGuessC[25]);
     int getSunkPlayerShips();
     int getxGuessC();
     int getyGuessC();
+
 };
 
 

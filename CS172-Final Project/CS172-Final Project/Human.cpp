@@ -6,6 +6,7 @@
 #include <iomanip>
 #include "Player.hpp"
 #include "Computer.hpp"
+
 using namespace std;
 
 Human::Human(string name)
@@ -93,13 +94,16 @@ void Human::placeShips(int array[5][5])
         }while(repeat == 1);
         humanBoard[xhuman[i]][yhuman[i]] = occupied;
     }
+
     cout << "\nThese are you ships.\n";
     printBoard(humanBoard);
+
 }
 
 //defines void function to check computer's guesses
 void Human::checkCompGuesses(int xGuessC[25], int yGuessC[25])
 {
+
     int hits=0, repeat;
     cout << "It's the computer's turn to guess.\n";
     do
@@ -115,25 +119,34 @@ void Human::checkCompGuesses(int xGuessC[25], int yGuessC[25])
                 repeat++;
         }
     }while(repeat!=0);
+
     //uses for loop and if statement to determine if the guess is a hit or a miss
     for(int i = 0; i <= 4; i++)
     {
         if (x == xhuman[i] && y == yhuman[i])
         {
+            
             cout << "The computer sunk your " << shipNames[i] << "!\n\n";
             humanBoard[x][y] = hit;
             sunkPlayerShips++;
             hits++;
         }
     }
+    
     if(hits == 0)
     {
         cout << "The computer missed!\n\n";
         humanBoard[x][y] = missed;
     }
-    printBoard(humanBoard);
+    
+    printBoard(humanBoard);                     // Prints player board
 }
+<<<<<<< HEAD
 //defines int function to get value of sunkPlayerShips
+=======
+
+// Returns number of player ships sunk
+>>>>>>> c7a8bb59bb4ad1587e687553d26fdae647aba100
 int Human::getSunkPlayerShips()
 {
     return sunkPlayerShips;

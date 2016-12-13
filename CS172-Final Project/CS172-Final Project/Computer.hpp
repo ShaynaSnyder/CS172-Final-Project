@@ -14,6 +14,7 @@ class Computer: public Player
 private:
     int  compBoard[5][5], x, y, xcomputer[5], ycomputer[5], sunkCompShips = 0;
 public:
+
     void printBoard(int array[5][5]);
     void placeShips(int array[5][5]);
     void makeGuessH(int array[5][5]);
@@ -22,6 +23,7 @@ public:
     int getSunkCompShips();
     int getxGuessH();
     int getyGuessH();
+
 };
 
 #endif /* Computer_hpp */
