@@ -77,7 +77,7 @@ void Human::placeShips(int array[5][5])
             //tests whether or not there is already a boat placed in this location
             for(int j = 0; j < i; j++)
             {
-                if(yhuman[i] == yhuman[j] && xhuman[i]==xhuman[j])
+                if(yhuman[i] == yhuman[j] && xhuman[i] == xhuman[j])
                 {
                     cout << "You have already placed a ship here.\n";
                     repeat = 1;

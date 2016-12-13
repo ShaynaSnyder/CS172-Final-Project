@@ -56,3 +56,47 @@ void Computer::placeShips(int array1[5][5])
 
 }
 
+//defines void function to check human's guesses
+void Computer::checkPlayerGuesses()
+{
+    char a;
+    int x, y=5, hit=0;
+    x=x-1;
+    //prompts human guess and reads it in
+    cout << "Make your guess: ";
+    cin >> x >> a;
+    switch (a)
+    {
+        case 'a':
+            y = 0;
+            break;
+        case 'b':
+            y = 1;
+            break;
+        case 'c':
+            y = 2;
+            break;
+        case 'd':
+            y = 3;
+            break;
+        case 'e':
+            y = 4;
+    }
+    //uses for loop and if statement to determine if the guess is a hit or a miss
+    for(int i = 0; i <= 4; i++)
+    {
+        if (x == xcomputer[i] && y == ycomputer[i])
+        {
+            cout << "You sunk the computer's (name of ship)!\n\n";
+            sunkCompShips++;
+            hit++;
+        }
+    }
+    if(hit==0)
+        cout << "You missed!\n\n";
+}
+
+int Computer::getSunkCompShips()
+{
+    return sunkCompShips;
+}
