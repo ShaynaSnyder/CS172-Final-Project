@@ -150,7 +150,9 @@ void Human::checkCompGuesses(int xGuessC[25], int yGuessC[25])
     }
     printBoard(humanBoard);          //calls function to print human board
 }
+
 //defines int function to get value of sunkPlayerShips
+
 int Human::getSunkPlayerShips()
 {
     return sunkPlayerShips;

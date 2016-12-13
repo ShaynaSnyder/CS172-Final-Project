@@ -23,9 +23,11 @@ public:
     const int hit      = 3;  // hit
     //declares public int variables for use in functions
     int columns, rows, repeat;
+
     //declares public char array for user input of letter location
     char letterlocation[5];
     //declares string array of ship names to store the names of each ship
+
     string shipNames[5] = {"Patrol Boat", "Destroyer", "Submarine", "Battleship", "Carrier"};
 };
 #endif /* Player_hpp */
