@@ -20,7 +20,7 @@ public:
     const int occupied = 1;  // contains a ship
     const int missed   = 2;  // missed
     const int hit      = 3;  // hit
-    int humanBoard[5][5], repeat=0, x, y;
+    int columns, rows, repeat;
     char letterlocation[5];
     
     

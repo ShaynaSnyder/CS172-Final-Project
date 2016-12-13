@@ -18,10 +18,10 @@ public:
     void placeShips(int array[5][5]);
     void makeGuessH(int array[5][5]);
     //declares void functions for checking guesses
-    void checkPlayerGuesses(int xGuess[25], int yGuess[25]);
+    void checkPlayerGuesses(int xGuessH[25], int yGuessH[25]);
     int getSunkCompShips();
-    int getxGuess();
-    int getyGuess();
+    int getxGuessH();
+    int getyGuessH();
 };
 
 #endif /* Computer_hpp */

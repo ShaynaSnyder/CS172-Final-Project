@@ -10,10 +10,10 @@ using namespace std;
 void Player::createBoard(int array[5][5])
 {
     //uses for loops to create a blank board
-    for (int x = 0; x <= 4; x++)
+    for (int rows = 0; rows <= 4; rows++)
     {
-        for (int y = 0; y <= 4; y++)
-            array[x][y] = empty;
+        for (int columns = 0; columns <= 4; columns++)
+            array[rows][columns] = empty;
     }
 }
 

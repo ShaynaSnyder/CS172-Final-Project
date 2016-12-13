@@ -18,7 +18,7 @@ int main()
     //declares string variable for name
     string name;
     //declares 2 two-dimensional int arrays to store computer and human boards
-    int humanBoard[5][5], compBoard[5][5], sunkCompShips=0, sunkPlayerShips=0, xGuess[25] = {5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5}, yGuess[25] = {};
+    int humanBoard[5][5], compBoard[5][5], sunkCompShips=0, sunkPlayerShips=0, xGuessH[25] = {5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5}, yGuessH[25] = {}, xGuessC[25]= {5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5}, yGuessC[25] = {} ;
     //creates Human object player1
     Human player1(name);
     //creates Computer object player2
@@ -57,10 +57,12 @@ int main()
 
         for(int g=0; g<25; g++)
         {
-            player2.checkPlayerGuesses(xGuess, yGuess);          // Function call to check player guesses
-            player1.checkCompGuesses();                          // Function call to check computer guesses
-            xGuess[g] = player2.getxGuess();
-            yGuess[g] = player2.getyGuess();
+            player2.checkPlayerGuesses(xGuessH, yGuessH);          // Function call to check player guesses
+            player1.checkCompGuesses(xGuessC, yGuessC);                          // Function call to check computer guesses
+            xGuessH[g] = player2.getxGuessH();
+            yGuessH[g] = player2.getyGuessH();
+            xGuessC[g] = player1.getxGuessC();
+            yGuessC[g] = player1.getyGuessC();
             sunkCompShips = player2.getSunkCompShips();
             if (player2.getSunkCompShips() == 5)
             {
