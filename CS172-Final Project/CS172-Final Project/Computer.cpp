@@ -110,7 +110,7 @@ void Computer::checkPlayerGuesses(int xGuess[25], int yGuess[25])
     {
         if (x == xcomputer[i] && y == ycomputer[i])
         {
-            cout << "You sunk the computer's (name of ship)!\n\n";
+            cout << "You sunk the computer's " << shipNames[i] << "!\n\n";
             compBoard[x][y] = hit;
             sunkCompShips++;
             hits++;

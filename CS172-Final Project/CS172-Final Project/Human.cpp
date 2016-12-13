@@ -107,7 +107,7 @@ void Human::checkCompGuesses()
     {
         if (x == xhuman[i] && y == yhuman[i])
         {
-            cout << "The computer sunk your (name of ship)!\n\n";
+            cout << "The computer sunk your " << shipNames[i] << "!\n\n";
             humanBoard[x][y] = hit;
             sunkPlayerShips++;
             hits++;
