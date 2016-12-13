@@ -57,7 +57,7 @@ int main()
         for(int g=0; g<25; g++)
         {
             player2.checkPlayerGuesses(xGuess, yGuess);          // Function call to check player guesses
-            player1.checkCompGuesses();            // Function call to check computer guesses
+            player1.checkCompGuesses();                          // Function call to check computer guesses
             xGuess[g] = player2.getxGuess();
             yGuess[g] = player2.getyGuess();
             sunkCompShips = player2.getSunkCompShips();

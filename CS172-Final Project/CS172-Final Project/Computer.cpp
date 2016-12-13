@@ -61,9 +61,10 @@ void Computer::placeShips(int array1[5][5])
 void Computer::checkPlayerGuesses(int xGuess[25], int yGuess[25])
 {
     char a;
-    int hit=0, repeat=0;
+    int hit=0, repeat;
     do
     {
+        repeat = 0;
         //prompts human guess and reads it in
         cout << "Make your guess: ";
         cin >> x >> a;
@@ -92,7 +93,7 @@ void Computer::checkPlayerGuesses(int xGuess[25], int yGuess[25])
         if(y==5)
         {
             cout << "Invalid guess.\n\n";
-                repeat = 1;
+                repeat++;
         }
         //tests whether or not the user has already guessed this location
         for(int j = 0; j < 25; j++)
@@ -100,10 +101,10 @@ void Computer::checkPlayerGuesses(int xGuess[25], int yGuess[25])
             if(y == yGuess[j] && x == xGuess[j])
             {
                 cout << "You have already guessed this location.\n\n";
-                repeat = 1;
+                repeat++;
             }
         }
-    }while(repeat == 1);
+    }while(repeat != 0);
     //uses for loop and if statement to determine if the guess is a hit or a miss
     for(int i = 0; i <= 4; i++)
     {
