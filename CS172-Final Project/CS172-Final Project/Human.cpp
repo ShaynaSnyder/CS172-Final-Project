@@ -113,7 +113,7 @@ void Human::checkCompGuesses()
             hits++;
         }
     }
-    if(hits==0)
+    if(hits == 0)
     {
         cout << "The computer missed!\n\n";
         humanBoard[x][y] = missed;
