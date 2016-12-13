@@ -13,11 +13,15 @@
 using namespace std;
 class Human: public Player
 {
+private:
+    int xhuman[5], yhuman[5], sunkPlayerShips=0;
 public:
     Human(string);
     string getName(string);
     void printBoard(int array[5][5]);
     void placeShips(int array[5][5]);
+    void checkCompGuesses();
+    int getSunkPlayerShips();
 };
 
 

@@ -11,9 +11,7 @@
 #include "Computer.hpp"
 #include "Player.hpp"
 
-int sunkPlayerShips = 0;
 //bool gameOver;    //is this ever used?
-void checkCompGuesses(int array[5][5]);
 
 using namespace std;
 
@@ -22,7 +20,7 @@ int main()
     //declares string variable for name
     string name;
     //declares 2 two-dimensional int arrays to store computer and human boards
-    int humanBoard[5][5], compBoard[5][5], sunkCompShips;
+    int humanBoard[5][5], compBoard[5][5], sunkCompShips, sunkPlayerShips;
     //creates Human object player1
     Human player1(name);
     //creates Computer object player2
@@ -66,30 +64,9 @@ int main()
         }
         //checkCompGuesses(humanBoard);                               // Function call to check computer guesses
         
+
         
-    }while (sunkCompShips <= 5); //&& sunkPlayerShips != 5);
+    }while (sunkCompShips <= 5 && sunkPlayerShips != 5);
     return 0;
-}
-
-
-//defines void function to check computer's guessses
-void checkCompGuesses(int array[5][5])
-{
-    int x, y, xhuman[5], yhuman[5];
-    cout << "It is the computer's turn to guess." << endl;
-    //uses random number generators to randomly generate a guess for the computer
-    x = rand() % 5;
-    y = rand() % 5;
-    //uses for loop and if statement to determine if the guess is a hit or a miss
-    for(int i = 0; i <= 4; i++)
-    {
-        if (x == xhuman[i] && y == yhuman[i])
-        {
-            cout << "The computer sunk your (name of ship)!\n\n";
-            sunkPlayerShips++;
-            // Space = 'H';
-        }
-    }
-    cout << "You missed" << endl;
 }
 

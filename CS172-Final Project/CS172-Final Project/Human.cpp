@@ -94,3 +94,29 @@ void Human::placeShips(int array[5][5])
     printBoard(humanBoard);
 }
 
+//defines void function to check computer's guessses
+void Human::checkCompGuesses()
+{
+    int x, y, hit=0;
+    cout << "It is the computer's turn to guess." << endl;
+    //uses random number generators to randomly generate a guess for the computer
+    x = rand() % 5;
+    y = rand() % 5;
+    //uses for loop and if statement to determine if the guess is a hit or a miss
+    for(int i = 0; i <= 4; i++)
+    {
+        if (x == xhuman[i] && y == yhuman[i])
+        {
+            cout << "The computer sunk your (name of ship)!\n\n";
+            sunkPlayerShips++;
+            hit++;
+        }
+    }
+    if(hit==0)
+        cout << "The computer missed!\n\n";
+}
+
+int Human::getSunkPlayerShips()
+{
+    return sunkPlayerShips;
+}
