@@ -11,24 +11,26 @@
 #include "Computer.hpp"
 #include "Player.hpp"
 
-void playerGuesses();
-void computerGuesses();
-int x, y, xlocation, ylocation;
 
-
-void checkGuesses()
+int x, y, xlocation[5], ylocation[5], xcomputer[5], ycomputer[5], sunkPlayerShips = 0, sunkCompShips = 0;
+bool gameOver;
+template<typename T>
+void checkPlayerGuesses(T array[5][5])
 {
-    for(int i = 0; i <= 4; i++)
+    cout << "Make your guess: ";
+    cin >> x >> y;
+    for(int i = 0; i <=4; i++)
     {
-        if (x == xlocation[i] && y == ylocation[i])
+        if (x == xcomputer[i] && y == ycomputer[i])
         {
-            sunk = 1;
-            cout << "You sunk your oppenent's (name of ship)!\n\n";
-            // Space = 'H';
+            cout << "You sunk the computer's (name of ship)!\n\n";
+            sunkCompShips++;
         }
     }
     cout << "You missed" << endl;
 }
+void checkCompGuesses(int array[5][5]);
+
 
 using namespace std;
 
@@ -64,30 +66,34 @@ int main()
     Computer player2;
     player2.createBoard(compBoard);
     player2.placeShips(compBoard);
-
-    for (int i = 1; i <= 100; i++)
+    
+    // Each player takes turns guessing
+    do
     {
-    playerGuesses();
-    player1.checkGuesses(compBoard);
-    computerGuesses();
-    player2.checkGuesses(board);
-    }
+        checkPlayerGuesses(compBoard);                              // Function call to check player guesses
+        checkCompGuesses(board);                                    // Function call to check computer guesses
+        
+    }while (sunkCompShips != 5 || sunkPlayerShips != 5);
+
     
     return 0;
 }
 
-void playerGuesses()
-{
-    cout << "Make your guess: ";
-    cin >> x >> y;
-  
-}
 
-void computerGuesses()
+void checkCompGuesses(int array[5][5])
 {
     cout << "It is the computer's turn to guess." << endl;
-    sunk = 0;
     x = rand() % 5;
     y = rand() % 5;
+    for(int i = 0; i <= 4; i++)
+    {
+        if (x == xlocation[i] && y == ylocation[i])
+        {
+            cout << "The computer sunk your (name of ship)!\n\n";
+            sunkPlayerShips++;
+            // Space = 'H';
+        }
+    }
+    cout << "You missed" << endl;
 }
 
