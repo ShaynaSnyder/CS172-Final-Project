@@ -1,10 +1,6 @@
-//
 //  Human.cpp
 //  CS172-Final Project
-//
-//  Created by Cheree LaPierre on /1211/16.
-//  Copyright © 2016 Shayna Snyder. All rights reserved.
-//
+//  Cheree LaPierre and Shayna Snyder
 
 #include "Human.hpp"
 #include <iomanip>
@@ -59,41 +55,41 @@ void Human::placeShips(int array[5][5])
         do
         {
             repeat=0;
-            cout << "\nPlace your " << shipNames[i] << ".\nEnter a number (1-5) and a letter (a-e): ";
-            cin >> xlocation[i] >> letterlocation[i];
+            cout << "Place your " << shipNames[i] << ": ";
+            cin >> xhuman[i] >> letterlocation[i];
             switch (letterlocation[i])
             {
                 case 'a':
-                    ylocation[i] = 0;
+                    yhuman[i] = 0;
                     break;
                 case 'b':
-                    ylocation[i] = 1;
+                    yhuman[i] = 1;
                     break;
                 case 'c':
-                    ylocation[i] = 2;
+                    yhuman[i] = 2;
                     break;
                 case 'd':
-                    ylocation[i] = 3;
+                    yhuman[i] = 3;
                     break;
                 case 'e':
-                    ylocation[i] = 4;
+                    yhuman[i] = 4;
             }
             //tests whether or not there is already a boat placed in this location
             for(int j = 0; j < i; j++)
             {
-                if(ylocation[i] == ylocation[j] && xlocation[i]==xlocation[j])
+                if(yhuman[i] == yhuman[j] && xhuman[i]==xhuman[j])
                 {
                     cout << "You have already placed a ship here.\n";
                     repeat = 1;
                 }
             }
             // If location is not between 1 and 5, repeat variable is set equal to 1
-            if(!(ylocation[i] >= 0 && ylocation[i] <= 4 && xlocation[i] >= 1 && xlocation[i] <= 5))
+            if(!(yhuman[i] >= 0 && yhuman[i] <= 4 && xhuman[i] >= 1 && xhuman[i] <= 5))
                 repeat = 1;
             if(repeat == 1)
                 cout << "This is not a valid input.\n";
         }while(repeat == 1);
-        board[xlocation[i] - 1][ylocation[i]] = occupied;
+        board[xhuman[i] - 1][yhuman[i]] = occupied;
     }
     printBoard(board);
 }
