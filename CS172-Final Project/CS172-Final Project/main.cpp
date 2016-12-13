@@ -59,15 +59,17 @@ int main()
         {
             player2.checkPlayerGuesses(xGuess, yGuess);          // Function call to check player guesses
             player1.checkCompGuesses();                          // Function call to check computer guesses
-            xGuess[g] = player2.getxGuess();
+            xGuess[g] = player2.getxGuess();                     
             yGuess[g] = player2.getyGuess();
             sunkCompShips = player2.getSunkCompShips();
+            // If all of computer's ships are sunk, game is over, program ends. If not game keeps going.
             if (player2.getSunkCompShips() == 5)
             {
                 cout << "Congratulations! You beat the computer!" << endl;
                 return 0;
             }
             sunkPlayerShips = player1.getSunkPlayerShips();
+            // If all of player's ships are sunk, game is over, program ends. If not game keeps going.
             if (player1.getSunkPlayerShips() == 5)
             {
                 cout << "Oh no! You lost. The computer sunk all of your ships." << endl;
