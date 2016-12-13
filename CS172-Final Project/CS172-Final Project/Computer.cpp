@@ -60,7 +60,7 @@ void Computer::placeShips(int array1[5][5])
 void Computer::checkPlayerGuesses()
 {
     char a;
-    int x, y=5, hit=0;
+    int x, y, hit=0;
     x=x-1;
     //prompts human guess and reads it in
     cout << "Make your guess: ";
@@ -81,7 +81,13 @@ void Computer::checkPlayerGuesses()
             break;
         case 'e':
             y = 4;
+            break;
+        default:
+            y = 5;
+            break;
     }
+    if(y==5)
+        cout << "Invalid guess.\n";
     //uses for loop and if statement to determine if the guess is a hit or a miss
     for(int i = 0; i <= 4; i++)
     {
