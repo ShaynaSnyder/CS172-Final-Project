@@ -13,7 +13,7 @@
 
 void playerGuesses();
 void computerGuesses();
-int x, y, xlocation, ylocation;
+int x, y, xlocation[5], ylocation[5];
 
 
 void checkGuesses()
